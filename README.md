@@ -15,7 +15,7 @@ npm install
 
 ### Development Server
 
-This will serve the website at <https://localhost:8000> and reload changes to
+This will serve the website at <https://localhost:3000> and reload changes to
 source files:
 
 ```bash
