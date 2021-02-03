@@ -10,6 +10,7 @@ module.exports = {
       primary: {
         DEFAULT: "#7e57c2",
       },
+      light: "#757575",
       transparent: "transparent",
       current: "currentColor",
       black: colors.black,

@@ -1,13 +1,15 @@
 <nav class="flex flex-wrap items-center md:justify-between px-4 py-6 md:p-4
             bg-primary">
   <div class="mx-auto md:mx-0 text-center md:text-left">
-    <img src="{{- config.logo | url -}}"
-         class="block md:inline-block mx-auto w-12 h-12 md:w-8 md:h-8"
-         alt="{{- config.name -}}"
-    />
-    <a class="hidden md:inline-block mx-2 my-2 text-white hover:text-gray-300"
-       href="/">
-      {{- config.name -}}
+    <a href="{{ "/" | url }}">
+      <img src="{{- config.logo | url -}}"
+           class="block md:inline-block mx-auto w-12 h-12 md:w-8 md:h-8"
+           alt="{{- config.name -}}"
+      />
+      <span class="hidden md:inline-block mx-2 my-2 text-white
+                   hover:text-gray-300">
+        {{- config.name -}}
+      </span>
     </a>
   </div>
 

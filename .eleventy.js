@@ -51,7 +51,7 @@ module.exports = function (eleventyConfig) {
 
   // BrowserSync settings.
   eleventyConfig.setBrowserSyncConfig({
-    port: 8000,
+    port: 3000,
     open: "local",
     online: false,
     localOnly: true,
@@ -82,5 +82,6 @@ module.exports = function (eleventyConfig) {
       includes: "_includes",
       layouts: "_layouts",
     },
+    pathPrefix: "/",
   };
 };

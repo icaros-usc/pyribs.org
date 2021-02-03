@@ -1,0 +1,18 @@
+{%- if description -%}
+  {%- assign _desc = description -%}
+{%- else -%}
+  {%- assign _desc = config.description -%}
+{%- endif -%}
+<meta name="description" content="{{ _desc }}">
+
+<link rel="canonical" href="{{ config.baseUrl }}{{ page.url | url }}">
+
+{%- comment -%}Open Graph tags - see https://ogp.me for more info.{%- endcomment -%}
+<meta property="og:title" content="{{ title }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ config.baseUrl }}{{ page.url | url }}" />
+<meta
+  property="og:image"
+  content="{{ config.baseUrl }}{{ config.openGraph | url }}"
+/>
+<meta property="og:description" content="{{ _desc }}" />
