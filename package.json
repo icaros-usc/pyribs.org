@@ -1,0 +1,77 @@
+{
+  "name": "pyribs.org",
+  "version": "0.0.0",
+  "description": "pyribs Website",
+  "scripts": {
+    "dev:assets": "webpack --config webpack.config.dev.js",
+    "dev:site": "ELEVENTY_ENV=development eleventy --serve",
+    "start": "npm-run-all --parallel dev:assets dev:site",
+    "build:clean": "rimraf ./build ./src/compiled-assets",
+    "build:assets": "webpack --config webpack.config.prod.js",
+    "build:site": "ELEVENTY_ENV=production eleventy",
+    "build": "npm-run-all build:clean build:assets build:site",
+    "lint": "eslint '**/*.{js,jsx}' --quiet",
+    "linkinator": "linkinator ./build --recurse",
+    "test": "npm run linkinator"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icaros-usc/pyribs.git"
+  },
+  "author": "Bryon Tjanaka",
+  "license": "MIT",
+  "dependencies": {
+    "@11ty/eleventy": "0.11.0",
+    "@babel/core": "7.12.0",
+    "@babel/preset-env": "7.12.0",
+    "@iktakahiro/markdown-it-katex": "4.0.1",
+    "autoprefixer": "10.2.4",
+    "babel-loader": "8.1.0",
+    "core-js": "3.6.5",
+    "css-loader": "5.0.0",
+    "fibers": "5.0.0",
+    "html-minifier": "4.0.0",
+    "jquery": "3.5.1",
+    "linkinator": "2.2.0",
+    "markdown-it": "12.0.0",
+    "md5-file": "5.0.0",
+    "mini-css-extract-plugin": "1.0.0",
+    "npm-run-all": "4.1.5",
+    "optimize-css-assets-webpack-plugin": "5.0.4",
+    "popper.js": "1.16.1",
+    "postcss": "8.2.4",
+    "postcss-loader": "4.0.4",
+    "rimraf": "3.0.2",
+    "sass": "1.27.0",
+    "sass-loader": "10.0.3",
+    "tailwindcss": "2.0.2",
+    "terser-webpack-plugin": "4.1.0",
+    "webpack": "4.44.1",
+    "webpack-cli": "3.3.12",
+    "webpack-merge": "5.1.3"
+  },
+  "devDependencies": {
+    "eslint": "7.11.0",
+    "eslint-config-google": "0.12.0",
+    "eslint-config-prettier": "4.3.0",
+    "husky": "2.3.0",
+    "lint-staged": "8.1.7",
+    "prettier": "2.1.2"
+  },
+  "lint-staged": {
+    "*.{json,css,scss}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.js": [
+      "eslint",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
