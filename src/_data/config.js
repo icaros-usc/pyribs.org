@@ -2,8 +2,10 @@
 module.exports = {
   name: "pyribs",
   author: "ICAROS Lab pyribs Team",
-  year: 2021,
   baseUrl: "https://pyribs.org",
+
+  // Inserted directly into the copyright, i.e. "(c) {{ copyright }}".
+  copyright: "ICAROS Lab 2020-2021",
 
   // Default description for pages. Provide "description" in the front matter of
   // a page to override this.
@@ -16,11 +18,39 @@ module.exports = {
   // that sites like FB change their preview.
   openGraph: "../imgs/open-graph.png",
 
-  // Social links. Set to null (no quotes) to exclude.
-  social: {
-    github: "https://github.com/uscvgsa/website/",
-    facebook: "https://www.facebook.com/uscvgsa/",
-    linkedin: "https://www.linkedin.com/groups/8467944/",
-    instagram: "https://www.instagram.com/uscvgsa/",
-  },
+  // Navigation links.
+  navigation: [
+    {
+      name: "Docs",
+      url: "https://docs.pyribs.org/",
+    },
+    {
+      name: "GitHub",
+      url: "https://github.com/icaros-usc/pyribs/",
+    },
+    {
+      name: "Blog",
+      url: "/blog/",
+    },
+  ],
+
+  // Footer links.
+  footer: [
+    {
+      name: "Blog",
+      url: "/blog/",
+    },
+    {
+      name: "Docs",
+      url: "https://docs.pyribs.org/",
+    },
+    {
+      name: "GitHub",
+      url: "https://github.com/icaros-usc/pyribs/",
+    },
+    {
+      name: "PyPI",
+      url: "https://pypi.org/project/ribs/",
+    },
+  ],
 };

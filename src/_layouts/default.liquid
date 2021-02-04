@@ -3,11 +3,11 @@
   <head>
     {% include head.liquid %}
   </head>
-  <body>
+  <body class="flex flex-col min-h-screen">
     <header class="header">
       {% include navbar.liquid %}
     </header>
-    <main>
+    <main class="flex-grow">
       {%- if cover -%}
         {% include cover.liquid %}
       {%- endif -%}

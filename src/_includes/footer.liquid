@@ -1,32 +1,23 @@
-{% comment %} <div class="container-fluid bg-dark text-white font-weight-bold py-3"> {% endcomment %}
-{% comment %}   <div class="row"> {% endcomment %}
-{% comment %}     <div class="col-12 text-center pb-1" style="font-size: 1.75rem"> {% endcomment %}
-{% comment %}       {%- if config.social.facebook -%} {% endcomment %}
-{% comment %}       <a class="footer__social-link" href="{{ config.social.facebook }}" title="Facebook"> {% endcomment %}
-{% comment %}         <i class="fab fa-facebook"></i> {% endcomment %}
-{% comment %}       </a> {% endcomment %}
-{% comment %}       {%- endif -%} {% endcomment %}
+<div class="w-full bg-gray-900 py-4 px-6 text-center">
+  <div class="mx-auto md:mx-4">
+    <img src="{{- config.logo | url -}}"
+         class="block md:inline-block mx-auto mb-3 w-20 h-20"
+         alt="{{- config.name -}}"
+    />
+  </div>
 
-{% comment %}       {%- if config.social.instagram -%} {% endcomment %}
-{% comment %}       <a class="footer__social-link" href="{{ config.social.instagram }}" title="Instagram"> {% endcomment %}
-{% comment %}         <i class="fab fa-instagram"></i> {% endcomment %}
-{% comment %}       </a> {% endcomment %}
-{% comment %}       {%- endif -%} {% endcomment %}
+  <div class="mx-auto text-center text-bold">
+    {%- for entry in config.footer -%}
+      <a href="{{ entry.url | url }}"
+         class="transition md:inline-block text-white hover:text-gray-300
+                mx-3 my-2"
+      >
+        {{- entry.name -}}
+      </a>
+    {%- endfor -%}
+  </div>
 
-{% comment %}       {%- if config.social.linkedin -%} {% endcomment %}
-{% comment %}       <a class="footer__social-link" href="{{ config.social.linkedin }}" title="LinkedIn"> {% endcomment %}
-{% comment %}         <i class="fab fa-linkedin"></i> {% endcomment %}
-{% comment %}       </a> {% endcomment %}
-{% comment %}       {%- endif -%} {% endcomment %}
-
-{% comment %}       {%- if config.social.github -%} {% endcomment %}
-{% comment %}       <a class="footer__social-link" href="{{ config.social.github }}" title="GitHub"> {% endcomment %}
-{% comment %}         <i class="fab fa-github"></i> {% endcomment %}
-{% comment %}       </a> {% endcomment %}
-{% comment %}       {%- endif -%} {% endcomment %}
-{% comment %}     </div> {% endcomment %}
-{% comment %}     <div class="col-12 text-center"> {% endcomment %}
-{% comment %}       &#169; {{ config.author }} {{ config.year }} {% endcomment %}
-{% comment %}     </div> {% endcomment %}
-{% comment %}   </div> {% endcomment %}
-{% comment %} </div> {% endcomment %}
+  <p class="w-full text-white text-xs pt-4">
+    &#169; {{ config.copyright }}
+  </p>
+</div>
