@@ -5,3 +5,13 @@
 ::selection {
   background-color: rgba(#c0c0c0, 0.5);
 }
+
+//
+// Global settings for articles, since the Markdown cannot be directly edited.
+//
+
+div.content {
+  p {
+    @apply mb-4;
+  }
+}
