@@ -96,7 +96,10 @@ import numpy as np
 for itr in range(1000):
     solutions = optimizer.ask()
 
+    # Optimize the 10D negative Sphere function.
     objectives = -np.sum(np.square(solutions), axis=1)
+
+    # BCs: first 2 coordinates of each 10D solution.
     bcs = solutions[:, :2]
 
     optimizer.tell(objectives, bcs)
