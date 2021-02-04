@@ -1,5 +1,6 @@
 ---
 layout: default.liquid
+cover: true
 title: pyribs
-tagline: A bare-bones quality diversity optimization library.
+description: A bare-bones quality diversity optimization library.
 ---

@@ -1,15 +1,12 @@
-<nav class="flex flex-wrap items-center md:justify-between px-4 py-6 md:p-4
-            bg-primary">
+<nav class="flex flex-wrap relative items-center md:justify-between
+            px-4 py-6 md:p-4 bg-primary"
+     style="box-shadow: 0 2px 4px rgba(0,0,0,0.5)">
   <div class="mx-auto md:mx-0 text-center md:text-left">
     <a href="{{ "/" | url }}">
       <img src="{{- config.logo | url -}}"
            class="block md:inline-block mx-auto w-12 h-12 md:w-8 md:h-8"
            alt="{{- config.name -}}"
       />
-      <span class="hidden md:inline-block mx-2 my-2 text-white
-                   hover:text-gray-300">
-        {{- config.name -}}
-      </span>
     </a>
   </div>
 
@@ -19,7 +16,8 @@
       {%- if entry.url -%}
         {%- comment -%}Add a single entry.{%- endcomment -%}
         <a
-          class="md:inline-block mx-3 my-2 text-white hover:text-gray-300"
+          class="transition md:inline-block mx-3 my-2
+                 text-white hover:text-gray-300"
           href="{{ entry.url | url }}"
         >
           {{- entry.name -}}

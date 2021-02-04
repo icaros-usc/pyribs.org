@@ -62,10 +62,10 @@ The following is a list of key technologies used in this repo:
 
 Refer to `package.json` for a complete list of dependencies.
 
-## Features
+## Configuration
 
-- Add `katex: true` in the front matter to turn on Katex styling (JS rendering
-  is done at build time)
+- `cover: true` - add a "hero" at the top of the page
+- `katex: true` - turn on Katex styling (JS rendering is done at build time)
 
 ## Manifest
 

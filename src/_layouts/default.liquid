@@ -8,7 +8,9 @@
       {% include navbar.liquid %}
     </header>
     <main>
-      <h1 class="font-light text-light text-4xl">{{ title }}</h1>
+      {%- if cover -%}
+        {% include cover.liquid %}
+      {%- endif -%}
       <article>
         {{ content }}
       </article>

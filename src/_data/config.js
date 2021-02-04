@@ -7,7 +7,7 @@ module.exports = {
 
   // Default description for pages. Provide "description" in the front matter of
   // a page to override this.
-  description: "A quality-diversity optimization library.",
+  description: "A bare-bones quality-diversity optimization library.",
 
   // Path to logo image.
   logo: "/imgs/logo.svg",
