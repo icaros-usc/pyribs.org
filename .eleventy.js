@@ -86,9 +86,9 @@ module.exports = function (eleventyConfig) {
     // See https://www.11ty.dev/docs/quicktips/not-found/
     callbacks: {
       ready: function (err, bs) {
-        const content404 = fs.readFileSync("build/404.html");
         bs.addMiddleware("*", (req, res) => {
           // Provides the 404 content without redirect.
+          const content404 = fs.readFileSync("build/404.html");
           res.write(content404);
           res.end();
         });
