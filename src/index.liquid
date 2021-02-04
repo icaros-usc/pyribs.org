@@ -5,11 +5,15 @@ title: pyribs
 description: A bare-bones quality diversity optimization library.
 tutorials:
   - name: Using CMA-ME to Land a Lunar Lander Like a Space Shuttle
-    img: /imgs/lunar-lander.png
     url: https://docs.pyribs.org/en/latest/tutorials/lunar_lander.html
+    img: /imgs/lunar-lander.png
   - name: Learning a Repertoire of Robot Arm Configurations
-    img: /imgs/arm-repertoire-example.png
     url: https://docs.pyribs.org/en/latest/tutorials/arm_repertoire.html
+    img: /imgs/arm-repertoire-example.png
+  - name: Generating Images to Fool an MNIST Classifier
+    url: https://docs.pyribs.org/en/latest/tutorials/fooling_mnist.html
+    img: /imgs/fooling-mnist.png
+    pixelate: true
 ---
 
 <div class="__index__">
@@ -164,7 +168,7 @@ pip install ribs[all]
   <div class="bg-white feature">
     <div class="feature-content">
       <h2>Comprehensive Tutorials</h2>
-      <p class="mb-4">
+      <p>
         Learn more about pyribs in the
         <a href="https://docs.pyribs.org/en/latest/tutorials.html">tutorials</a>.
         All tutorials are also available on
@@ -173,10 +177,11 @@ pip install ribs[all]
       </p>
       <div class="text-center">
       {%- for t in tutorials -%}
-        <a class="w-72 block md:inline-block mx-auto md:mx-4 mt-8 md:mt-2
+        <a class="w-72 block md:inline-block mx-auto md:mx-4 mt-8
                   cursor-pointer shadow"
            href="{{ t.url | url }}">
           <img class="w-full"
+               style="{%- if t.pixelate -%}image-rendering: pixelated{%- endif -%}"
                alt="{{ t.name }}" src="{{ t.img | url }}" />
           <p class="bg-gray-100 p-4">
             {{- t.name -}}
