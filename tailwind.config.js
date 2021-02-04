@@ -3,6 +3,7 @@ const colors = require("tailwindcss/colors");
 
 module.exports = {
   purge: ["./src/**/*.html", "./src/**/*.js"],
+  content: ["src/**/*.html", "src/**/*.liquid", "src/**/*.md"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
@@ -11,6 +12,9 @@ module.exports = {
         dark: "#603f8c",
         DEFAULT: "#7e57c2",
         light: "#f1eafd",
+      },
+      secondary: {
+        DEFAULT: "#e040fb",
       },
       light: "rgba(0,0,0,0.54)",
       transparent: "transparent",

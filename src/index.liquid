@@ -1,0 +1,147 @@
+---
+layout: default.liquid
+cover: true
+title: pyribs
+description: A bare-bones quality diversity optimization library.
+tutorials:
+  - name: Using CMA-ME to Land a Lunar Lander Like a Space Shuttle
+    img: /imgs/lunar-lander.png
+    url: https://docs.pyribs.org/en/latest/tutorials/lunar_lander.html
+  - name: Learning a Repertoire of Robot Arm Configurations
+    img: /imgs/arm-repertoire-example.png
+    url: https://docs.pyribs.org/en/latest/tutorials/arm_repertoire.html
+---
+
+<div class="__index__">
+
+  <div class="bg-white feature">
+    <h2>Flexible Components</h2>
+    <div>
+      <p>
+        An <b>Archive</b> saves the best representatives generated within behavior
+        space.
+      </p>
+{% highlight python %}
+from ribs.archives import GridArchive
+
+archive = GridArchive(
+  dims=[20, 20],
+  ranges=[(-1, 1), (-1, 1)],
+)
+{% endhighlight %}
+    </div>
+
+    <div>
+      <p>
+        <b>Emitters</b> control how new candidate solutions are generated and
+        affect if the algorithm prioritizes quality or diversity.
+      </p>
+{% highlight python %}
+from ribs.emitters import ImprovementEmitter
+
+emitters = [
+  ImprovementEmitter(
+    archive,
+    x0=[0.0] * 10,
+    sigma0=0.1,
+  )
+]
+{% endhighlight %}
+    </div>
+
+    <div>
+      <p>
+        An <b>Optimizer</b> joins the <b>Archive</b> and <b>Emitters</b> together
+        and acts as a scheduling algorithm for emitters.
+      </p>
+{% highlight python %}
+from ribs.optimizers import Optimizer
+
+optimizer = Optimizer(archive, emitters)
+{% endhighlight %}
+    </div>
+  </div>
+
+  <div class="bg-gray-100 feature">
+    <h2>Intuitive Usage</h2>
+      <p>
+        pyribs components come together in an intuitive ask-tell interface
+        inspired by <a href="https://pypi.org/project/cma/">pycma</a>.
+      </p>
+{% highlight python %}
+import numpy as np
+
+for itr in range(1000):
+    solutions = optimizer.ask()
+
+    objectives = -np.sum(np.square(solutions), axis=1)
+    bcs = solutions[:, :2]
+
+    optimizer.tell(objectives, bcs)
+{% endhighlight %}
+  </div>
+
+  <div class="bg-white feature">
+    <h2>Insightful Visualizations</h2>
+      <p>
+        The pyribs
+        <a href="https://docs.pyribs.org/en/latest/api/ribs.visualize.html)">
+        visualize</a> module integrates with
+        <a href="https://matplotlib.org/">Matplotlib</a> to plot a heatmap of the
+        archive after each experiment.
+      </p>
+{% highlight python %}
+import matplotlib.pyplot as plt
+from ribs.visualize import grid_archive_heatmap
+
+grid_archive_heatmap(archive)
+plt.show()
+{% endhighlight %}
+    <img class="mx-auto"
+         alt="Grid Archive Heatmap for the Sphere function"
+         src="{{ 'imgs/sphere-heatmap.png' | url }}" />
+  </div>
+
+  <div class="bg-gray-100 feature">
+    <h2>Easy Installation</h2>
+    <p>
+      pyribs fully supports Python 3.6-3.8 and is available on
+      <a href="https://pypi.org/project/ribs/">PyPI</a>.
+      To install the base version, run:
+    </p>
+{% highlight bash %}
+pip install ribs
+{% endhighlight %}
+      <p>
+        For the full version, which adds the visualize module, run:
+      </p>
+{% highlight bash %}
+pip install ribs[all]
+{% endhighlight %}
+  </div>
+
+  <div class="bg-white feature">
+    <h2>Comprehensive Tutorials</h2>
+    <p class="mb-4">
+      Learn more about pyribs in the
+      <a href="https://docs.pyribs.org/en/latest/tutorials.html">tutorials</a>.
+      All tutorials are also available on
+      <a href="https://colab.research.google.com/github/icaros-usc/pyribs/blob/master/">
+      Google Colab</a>.
+    </p>
+    <div class="text-center">
+    {%- for t in tutorials -%}
+      <a class="w-72 block md:inline-block mx-auto md:mx-4 mt-8 md:mt-2
+                cursor-pointer shadow-md"
+         href="{{ t.url | url }}">
+        <img class="w-full"
+             alt="{{ t.name }}" src="{{ t.img | url }}" />
+        <p class="bg-gray-100 p-4">
+          {{- t.name -}}
+        </p>
+      </a>
+    {%- endfor -%}
+    </div>
+  </div>
+
+</div>

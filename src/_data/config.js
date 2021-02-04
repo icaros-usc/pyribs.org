@@ -61,9 +61,4 @@ module.exports = {
       url: "https://pypi.org/project/ribs/",
     },
   ],
-
-  // Home page.
-  home: {
-    tutorials: {},
-  },
 };

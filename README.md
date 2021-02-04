@@ -15,12 +15,16 @@ npm install
 
 ### Development Server
 
-This will serve the website at <https://localhost:3000> and reload changes to
-source files:
+This will serve the website at <https://localhost:3000/dev> and reload changes
+to source files:
 
 ```bash
 npm start
 ```
+
+Note: Though the dev site is built at `/dev`, the actual site is built with `/`.
+Using `/dev` helps catch instances where we depend on the site being hosted at
+`/` (e.g. assets with the wrong link).
 
 ### Command Reference
 

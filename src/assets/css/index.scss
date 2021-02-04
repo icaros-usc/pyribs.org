@@ -2,16 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "prism-material-dark";
+
 ::selection {
   background-color: rgba(#c0c0c0, 0.5);
 }
 
+@layer base {
+  a {
+    @apply text-primary hover:text-secondary;
+  }
+  pre {
+    @apply text-sm my-5;
+  }
+}
+
 //
-// Global settings for articles, since the Markdown cannot be directly edited.
+// Page-specific styles included here because HTML is not processed by PostCSS.
 //
 
-div.content {
+.__index__ {
+  h2 {
+    @apply text-4xl text-black font-light pb-7;
+  }
+  div.feature {
+    @apply px-4 pt-10 pb-8;
+  }
+}
+
+.__article__ {
+  // Global settings for articles. Particularly useful because we cannot
+  // directly apply styles in markdown.
   p {
     @apply mb-4;
+  }
+  pre {
+    @apply text-sm;
   }
 }

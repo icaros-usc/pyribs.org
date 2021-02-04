@@ -24,13 +24,34 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/compiled-assets": "assets" });
 
   // Markdown parsing with markdown-it.
-  const markdownIt = require("markdown-it");
-  const markdownItKatex = require("@iktakahiro/markdown-it-katex");
-  const options = {
+  const markdownLib = require("markdown-it")({
     html: true,
-  };
-  const markdownLib = markdownIt(options).use(markdownItKatex);
+    xhtmlOut: false,
+    linkify: true,
+    typographer: true,
+  })
+    .use(require("@iktakahiro/markdown-it-katex"))
+    .use(require("markdown-it-center-text"))
+    .use(require("markdown-it-anchor"), {
+      level: 2,
+      permalink: true,
+      permalinkBefore: false,
+      permalinkSymbol: "¶",
+      permalinkClass: "permalink", // Style in index.liquid
+    })
+    .use(require("markdown-it-toc-done-right"), {
+      level: 2,
+      listType: "ul",
+      containerClass: "l-body",
+    })
+    .use(require("markdown-it-implicit-figures"), {
+      figcaption: true,
+      link: true,
+    });
   eleventyConfig.setLibrary("md", markdownLib);
+
+  // Syntax highlighting.
+  eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-syntaxhighlight"));
 
   // Minify HTML.
   if (process.env.ELEVENTY_ENV === "production") {
@@ -82,6 +103,11 @@ module.exports = function (eleventyConfig) {
       includes: "_includes",
       layouts: "_layouts",
     },
-    pathPrefix: "/",
+    markdownTemplateEngine: "liquid",
+
+    // Using /dev in development helps catch instances where we depend on assets
+    // to be hosted at / (in these cases, we should be using Eleventy's "url"
+    // Liquid filter.
+    pathPrefix: process.env.ELEVENTY_ENV === "development" ? "/dev" : "/",
   };
 };
