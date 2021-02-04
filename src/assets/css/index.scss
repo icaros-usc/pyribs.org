@@ -34,7 +34,7 @@
   }
 
   div.component {
-    @apply block w-full md:w-3/4 lg:w-1/3 mx-auto lg:mx-0 lg:px-3;
+    @apply block w-full md:w-3/4 lg:w-1/3 mx-auto lg:mx-0;
 
     pre {
       @apply md:h-52 mb-0;
