@@ -3,7 +3,7 @@ module.exports = {
   entries: [
     {
       name: "Blog",
-      url: "/blog",
+      url: "/blog/",
     },
     {
       name: "Docs",

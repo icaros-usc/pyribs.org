@@ -1,24 +1,31 @@
-<nav class="flex flex-wrap relative items-center md:justify-between
-            px-4 py-6 md:p-4 bg-primary"
+<nav class="flex flex-wrap relative items-center px-4 py-6 md:py-2 bg-primary"
      style="box-shadow: 0 2px 4px rgba(0,0,0,0.5)">
-  <div class="mx-auto md:mx-0 text-center md:text-left">
+  <div class="mx-auto md:mx-2 text-center md:text-left">
     <a href="{{ "/" | url }}">
       <img src="{{- config.logo | url -}}"
-           class="block md:inline-block mx-auto w-12 h-12 md:w-8 md:h-8"
+           class="block md:inline-block mx-auto w-10 h-10 md:w-8 md:h-8"
            alt="{{- config.name -}}"
       />
     </a>
   </div>
 
+  {%- assign activeUrl = page.url | url -%}
   <div class="md:flex w-full md:w-auto text-center md:text-left text-bold
-              mt-5 md:mt-0">
+              mt-4 md:mt-0">
     {%- for entry in navbar.entries -%}
       {%- if entry.url -%}
         {%- comment -%}Add a single entry.{%- endcomment -%}
-        <a
-          class="transition md:inline-block mx-3 my-2
-                 text-white hover:text-gray-300"
-          href="{{ entry.url | url }}"
+
+        {%- assign entryUrl = entry.url | url -%}
+        {%- if entryUrl == activeUrl -%}
+          {%- assign borderStyle = "border-white hover:border-gray-300" -%}
+        {%- else -%}
+          {%- assign borderStyle = "border-primary" -%}
+        {%- endif -%}
+
+        <a href="{{ entryUrl}}"
+           class="transition md:inline-block text-white hover:text-gray-300
+                  mx-3 my-2 pt-1 pb-0.5 border-b-4 {{ borderStyle }}"
         >
           {{- entry.name -}}
         </a>
