@@ -20,10 +20,10 @@ module.exports = {
 
   // Navigation links.
   navigation: [
-    {
-      name: "Blog",
-      url: "/blog/",
-    },
+    // {
+    //   name: "Blog",
+    //   url: "/blog/",
+    // },
     {
       name: "Documentation",
       url: "https://docs.pyribs.org/",
@@ -40,10 +40,10 @@ module.exports = {
 
   // Footer links.
   footer: [
-    {
-      name: "Blog",
-      url: "/blog/",
-    },
+    // {
+    //   name: "Blog",
+    //   url: "/blog/",
+    // },
     {
       name: "Documentation",
       url: "https://docs.pyribs.org/",
