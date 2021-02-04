@@ -15,12 +15,15 @@ tutorials:
 <div class="__index__">
 
   <div class="bg-white feature">
-    <h2>Flexible Components</h2>
-    <div>
+    <div class="feature-content">
+      <h2>Flexible Components</h2>
       <p>
-        An <b>Archive</b> saves the best representatives generated within behavior
-        space.
+        Every Quality-Diversity (QD) algorithm in pyribs consists of three
+        components.
       </p>
+      <div class="lg:flex">
+        <div class="component">
+          <div class="shadow">
 {% highlight python %}
 from ribs.archives import GridArchive
 
@@ -29,13 +32,16 @@ archive = GridArchive(
   ranges=[(-1, 1), (-1, 1)],
 )
 {% endhighlight %}
-    </div>
+            <p class="p-3 h-28 bg-gray-100">
+              An <a href="https://docs.pyribs.org/en/latest/api/ribs.archives.html">
+              <b>Archive</b></a> saves the best representatives generated within
+              behavior space.
+            </p>
+          </div>
+        </div>
 
-    <div>
-      <p>
-        <b>Emitters</b> control how new candidate solutions are generated and
-        affect if the algorithm prioritizes quality or diversity.
-      </p>
+        <div class="component">
+          <div class="shadow">
 {% highlight python %}
 from ribs.emitters import ImprovementEmitter
 
@@ -47,27 +53,43 @@ emitters = [
   )
 ]
 {% endhighlight %}
-    </div>
+            <p class="p-3 h-28 bg-gray-100">
+              <a href="https://docs.pyribs.org/en/latest/api/ribs.emitters.html">
+              <b>Emitters</b></a> control how new candidate solutions are
+              generated and affect if the algorithm prioritizes quality or
+              diversity.
+            </p>
+          </div>
+        </div>
 
-    <div>
-      <p>
-        An <b>Optimizer</b> joins the <b>Archive</b> and <b>Emitters</b> together
-        and acts as a scheduling algorithm for emitters.
-      </p>
+        <div class="component">
+          <div class="shadow">
 {% highlight python %}
 from ribs.optimizers import Optimizer
 
 optimizer = Optimizer(archive, emitters)
 {% endhighlight %}
+            <p class="p-3 h-28 bg-gray-100">
+              An <a href="https://docs.pyribs.org/en/latest/api/ribs.optimizers.html">
+              <b>Optimizer</b></a> joins the <b>Archive</b> and <b>Emitters</b>
+              together and acts as a scheduling algorithm for emitters.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="bg-gray-100 feature">
-    <h2>Intuitive Usage</h2>
-      <p>
-        pyribs components come together in an intuitive ask-tell interface
-        inspired by <a href="https://pypi.org/project/cma/">pycma</a>.
-      </p>
+    <div class="feature-content md:flex md:items-center md:justify-between">
+      <div class="md:w-1/3 md:inline-block">
+        <h2>Intuitive Usage</h2>
+        <p>
+          pyribs components come together in an intuitive ask-tell interface
+          inspired by <a href="https://pypi.org/project/cma/">pycma</a>.
+        </p>
+      </div>
+      <div class="md:w-2/3 md:inline-block md:px-4">
 {% highlight python %}
 import numpy as np
 
@@ -79,17 +101,21 @@ for itr in range(1000):
 
     optimizer.tell(objectives, bcs)
 {% endhighlight %}
+      </div>
+    </div>
   </div>
 
   <div class="bg-white feature">
-    <h2>Insightful Visualizations</h2>
-      <p>
-        The pyribs
-        <a href="https://docs.pyribs.org/en/latest/api/ribs.visualize.html">
-        visualize</a> module integrates with
-        <a href="https://matplotlib.org/">Matplotlib</a> to plot a heatmap of the
-        archive after each experiment.
-      </p>
+    <div class="feature-content md:flex md:items-center md:justify-between">
+      <div class="md:w-1/2 md:inline-block">
+        <h2>Insightful Visualizations</h2>
+        <p>
+          The pyribs
+          <a href="https://docs.pyribs.org/en/latest/api/ribs.visualize.html">
+          visualize</a> module integrates with
+          <a href="https://matplotlib.org/">Matplotlib</a> to plot a heatmap of the
+          archive after each experiment.
+        </p>
 {% highlight python %}
 import matplotlib.pyplot as plt
 from ribs.visualize import grid_archive_heatmap
@@ -97,50 +123,62 @@ from ribs.visualize import grid_archive_heatmap
 grid_archive_heatmap(archive)
 plt.show()
 {% endhighlight %}
-    <img class="mx-auto"
-         alt="Grid Archive Heatmap for the Sphere function"
-         src="{{ 'imgs/sphere-heatmap.png' | url }}" />
+      </div>
+      <div class="md:w-1/2 md:inline-block md:px-2">
+        <img class="mx-auto"
+             alt="Grid Archive Heatmap for the Sphere function"
+             src="{{ 'imgs/sphere-heatmap.png' | url }}" />
+      </div>
+    </div>
   </div>
 
   <div class="bg-gray-100 feature">
-    <h2>Easy Installation</h2>
-    <p>
-      pyribs fully supports Python 3.6-3.8 and is available on
-      <a href="https://pypi.org/project/ribs/">PyPI</a>.
-      To install the base version, run:
-    </p>
+    <div class="feature-content">
+      <h2>Easy Installation</h2>
+      <p>
+        pyribs fully supports Python 3.6-3.8 and is available on
+        <a href="https://pypi.org/project/ribs/">PyPI</a>.
+        To install the base version, run:
+      </p>
+      <div class="md:w-3/4">
 {% highlight bash %}
 pip install ribs
 {% endhighlight %}
+      </div>
       <p>
         For the full version, which adds the visualize module, run:
       </p>
+      <div class="md:w-3/4">
 {% highlight bash %}
 pip install ribs[all]
 {% endhighlight %}
+      </div>
+    </div>
   </div>
 
   <div class="bg-white feature">
-    <h2>Comprehensive Tutorials</h2>
-    <p class="mb-4">
-      Learn more about pyribs in the
-      <a href="https://docs.pyribs.org/en/latest/tutorials.html">tutorials</a>.
-      All tutorials are also available on
-      <a href="https://colab.research.google.com/github/icaros-usc/pyribs/blob/master/">
-      Google Colab</a>.
-    </p>
-    <div class="text-center">
-    {%- for t in tutorials -%}
-      <a class="w-72 block md:inline-block mx-auto md:mx-4 mt-8 md:mt-2
-                cursor-pointer shadow-md"
-         href="{{ t.url | url }}">
-        <img class="w-full"
-             alt="{{ t.name }}" src="{{ t.img | url }}" />
-        <p class="bg-gray-100 p-4">
-          {{- t.name -}}
-        </p>
-      </a>
-    {%- endfor -%}
+    <div class="feature-content">
+      <h2>Comprehensive Tutorials</h2>
+      <p class="mb-4">
+        Learn more about pyribs in the
+        <a href="https://docs.pyribs.org/en/latest/tutorials.html">tutorials</a>.
+        All tutorials are also available on
+        <a href="https://colab.research.google.com/github/icaros-usc/pyribs/blob/master/">
+        Google Colab</a>.
+      </p>
+      <div class="text-center">
+      {%- for t in tutorials -%}
+        <a class="w-72 block md:inline-block mx-auto md:mx-4 mt-8 md:mt-2
+                  cursor-pointer shadow-md"
+           href="{{ t.url | url }}">
+          <img class="w-full"
+               alt="{{ t.name }}" src="{{ t.img | url }}" />
+          <p class="bg-gray-100 p-4">
+            {{- t.name -}}
+          </p>
+        </a>
+      {%- endfor -%}
+      </div>
     </div>
   </div>
 

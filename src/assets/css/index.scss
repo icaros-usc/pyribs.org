@@ -25,8 +25,20 @@
   h2 {
     @apply text-4xl text-black font-light pb-7;
   }
+
   div.feature {
     @apply px-4 pt-10 pb-8;
+  }
+  div.feature-content {
+    @apply mx-auto max-w-screen-xl;
+  }
+
+  div.component {
+    @apply block w-full lg:w-1/3 mx-auto lg:mx-0 lg:px-3;
+
+    pre {
+      @apply md:h-52 mb-0;
+    }
   }
 }
 
