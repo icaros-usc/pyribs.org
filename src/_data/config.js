@@ -25,8 +25,12 @@ module.exports = {
       url: "/blog/",
     },
     {
-      name: "Docs",
+      name: "Documentation",
       url: "https://docs.pyribs.org/",
+    },
+    {
+      name: "Tutorials",
+      url: "https://docs.pyribs.org/en/latest/tutorials.html",
     },
     {
       name: "GitHub",
@@ -41,8 +45,12 @@ module.exports = {
       url: "/blog/",
     },
     {
-      name: "Docs",
+      name: "Documentation",
       url: "https://docs.pyribs.org/",
+    },
+    {
+      name: "Tutorials",
+      url: "https://docs.pyribs.org/en/latest/tutorials.html",
     },
     {
       name: "GitHub",
@@ -53,4 +61,9 @@ module.exports = {
       url: "https://pypi.org/project/ribs/",
     },
   ],
+
+  // Home page.
+  home: {
+    tutorials: {},
+  },
 };
