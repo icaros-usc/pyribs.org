@@ -7,7 +7,7 @@
     "dev:site": "ELEVENTY_ENV=development eleventy --serve",
     "start": "npm-run-all --parallel dev:assets dev:site",
     "build:clean": "rimraf ./build ./src/compiled-assets",
-    "build:assets": "webpack --config webpack.config.prod.js",
+    "build:assets": "NODE_ENV=production webpack --config webpack.config.prod.js",
     "build:site": "ELEVENTY_ENV=production eleventy",
     "build": "npm-run-all build:clean build:assets build:site",
     "lint": "eslint '**/*.{js,jsx}' --quiet",
