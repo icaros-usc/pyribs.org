@@ -6,7 +6,10 @@
 
 {%- comment -%}Stylesheets{%- endcomment -%}
 <link rel="stylesheet" href="{{ "/assets/main.css" | url }}?{{ cacheBust.mainCss }}" />
+
+{%- if icons -%}
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{%- endif -%}
 
 {%- if katex -%}
 <link rel="stylesheet"

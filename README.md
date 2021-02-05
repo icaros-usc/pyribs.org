@@ -68,8 +68,10 @@ Refer to `package.json` for a complete list of dependencies.
 
 ## Configuration
 
-- `cover: true` - add a "hero" at the top of the page
-- `katex: true` - turn on Katex styling (JS rendering is done at build time)
+- `cover: true` - Add a "hero" at the top of the page
+- `icons: true` - Add [Material icons](https://material.io/resources/icons/) to
+  the page
+- `katex: true` - Turn on Katex styling (JS rendering is done at build time)
 
 ## Manifest
 
