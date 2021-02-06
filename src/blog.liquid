@@ -1,0 +1,12 @@
+---
+layout: default.liquid
+title: Blog
+permalink: /blog/index.html
+description: Updates about pyribs.
+---
+
+<ul>
+{%- for post in collections.post -%}
+  <a href="{{- post.url | url -}}">{{ post.data.title }}</a>
+{%- endfor -%}
+</ul>

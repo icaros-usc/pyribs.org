@@ -1,7 +1,7 @@
 // Config for the entire site.
 const twitter = "https://twitter.com/pyribs/";
 const github = "https://github.com/icaros-usc/pyribs/";
-// const rss = "/feed.xml";
+const rss = "/feed.xml";
 
 module.exports = {
   name: "pyribs",
@@ -41,22 +41,18 @@ module.exports = {
       url: twitter,
       fa: "fab fa-twitter",
     },
-    // {
-    //   name: "RSS",
-    //   url: rss,
-    //   fa: "fa fa-rss",
-    // },
+    {
+      name: "RSS",
+      url: rss,
+      fa: "fa fa-rss",
+    },
   ],
 
   // Navigation links.
   navigation: [
-    // {
-    //   name: "Blog",
-    //   url: "/blog/",
-    // },
     {
-      name: "Documentation",
-      url: "https://docs.pyribs.org/",
+      name: "Blog",
+      url: "/blog/",
     },
     {
       name: "Publications",
@@ -65,6 +61,10 @@ module.exports = {
     {
       name: "Citation",
       url: "/citation/",
+    },
+    {
+      name: "Documentation",
+      url: "https://docs.pyribs.org/",
     },
     {
       name: "GitHub",
@@ -74,17 +74,9 @@ module.exports = {
 
   // Footer links.
   footer: [
-    // {
-    //   name: "Blog",
-    //   url: "/blog/",
-    // },
     {
-      name: "Documentation",
-      url: "https://docs.pyribs.org/",
-    },
-    {
-      name: "Tutorials",
-      url: "https://docs.pyribs.org/en/latest/tutorials.html",
+      name: "Blog",
+      url: "/blog/",
     },
     {
       name: "Publications",
@@ -93,6 +85,14 @@ module.exports = {
     {
       name: "Citation",
       url: "/citation/",
+    },
+    {
+      name: "Documentation",
+      url: "https://docs.pyribs.org/",
+    },
+    {
+      name: "Tutorials",
+      url: "https://docs.pyribs.org/en/latest/tutorials.html",
     },
     {
       name: "GitHub",
@@ -106,9 +106,9 @@ module.exports = {
       name: "Twitter",
       url: twitter,
     },
-    // {
-    //   name: "RSS",
-    //   url: rss,
-    // },
+    {
+      name: "RSS",
+      url: rss,
+    },
   ],
 };
