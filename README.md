@@ -66,13 +66,20 @@ The following is a list of key technologies used in this repo:
 
 Refer to `package.json` for a complete list of dependencies.
 
-## Configuration
+## Features
 
 - `logo: true` - Add a "hero" at the top of the page with the logo
 - `cover: true` - Add a "hero" at the top of the page
-- `icons: true` - Add [Material icons](https://material.io/resources/icons/) to
-  the page
 - `katex: true` - Turn on Katex styling (JS rendering is done at build time)
+- The `clipboard` shortcode adds a clipboard button to an element such as a code
+  block; for example, in Liquid, use
+  ```liquid
+  {% clipboard %}
+  {% highlight python %}
+  ...
+  {% endhighlight %}
+  {% endclipboard %}
+  ```
 
 ## Manifest
 
