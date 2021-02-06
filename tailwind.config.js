@@ -7,6 +7,7 @@ module.exports = {
     "./src/**/*.js",
     "./src/**/*.liquid",
     "./src/**/*.md",
+    ".eleventy.js", // We generate some markup in the shortcodes listed here.
   ],
   content: ["src/**/*.html", "src/**/*.liquid", "src/**/*.md"],
   darkMode: false, // or 'media' or 'class'
