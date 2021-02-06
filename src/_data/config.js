@@ -19,7 +19,10 @@ module.exports = {
 
   // Path to Open Graph image. Change this URL whenever the image changes so
   // that sites like FB change their preview.
-  openGraph: "/imgs/open-graph.png",
+  openGraph: "/imgs/open-graph-preview.png",
+
+  // Path to Twitter preview image.
+  twitterPreview: "/imgs/twitter-preview.png",
 
   // Navigation links.
   navigation: [
