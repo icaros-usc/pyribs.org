@@ -11,6 +11,9 @@ module.exports = {
   // a page to override this.
   description: "A bare-bones quality-diversity optimization library.",
 
+  // Path to icon image.
+  icon: "/imgs/icon.svg",
+
   // Path to logo image.
   logo: "/imgs/logo.svg",
 

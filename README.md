@@ -68,6 +68,7 @@ Refer to `package.json` for a complete list of dependencies.
 
 ## Configuration
 
+- `logo: true` - Add a "hero" at the top of the page with the logo
 - `cover: true` - Add a "hero" at the top of the page
 - `icons: true` - Add [Material icons](https://material.io/resources/icons/) to
   the page
