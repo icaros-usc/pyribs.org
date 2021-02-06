@@ -40,15 +40,13 @@
       @apply md:h-52 mb-0;
     }
   }
+
+  pre {
+    font-size: 0.875rem;
+  }
 }
 
 .__article__ {
   // Global settings for articles. Particularly useful because we cannot
   // directly apply styles in markdown.
-  p {
-    @apply mb-4;
-  }
-  pre {
-    @apply text-sm;
-  }
 }
