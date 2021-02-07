@@ -10,6 +10,11 @@ title: Publications
   <h2 class="text-5xl font-light mt-6 mb-5 pl-2">
     {{- section.title -}}
   </h2>
+  {%- if section.message -%}
+  <p class="pl-2 mb-2">
+    {{- section.message -}}
+  </p>
+  {%- endif -%}
   <div class="w-full">
     {%- assign entries = section.entries | reverse -%}
     {%- for e in entries -%}
