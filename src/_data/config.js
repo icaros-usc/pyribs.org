@@ -36,6 +36,10 @@ module.exports = {
       url: "https://docs.pyribs.org/en/latest/tutorials.html",
     },
     {
+      name: "Publications",
+      url: "/publications/",
+    },
+    {
       name: "GitHub",
       url: "https://github.com/icaros-usc/pyribs/",
     },
@@ -54,6 +58,10 @@ module.exports = {
     {
       name: "Tutorials",
       url: "https://docs.pyribs.org/en/latest/tutorials.html",
+    },
+    {
+      name: "Publications",
+      url: "/publications/",
     },
     {
       name: "GitHub",
