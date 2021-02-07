@@ -14,9 +14,6 @@ module.exports = {
   // Path to icon image.
   icon: "/imgs/icon.svg",
 
-  // Path to logo image.
-  logo: "/imgs/logo.svg",
-
   // Path to Open Graph image. Change this URL whenever the image changes so
   // that sites like FB change their preview.
   openGraph: "/imgs/open-graph-preview.png",

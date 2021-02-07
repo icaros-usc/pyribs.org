@@ -68,7 +68,6 @@ Refer to `package.json` for a complete list of dependencies.
 
 ## Features
 
-- `logo: true` - Add a "hero" at the top of the page with the logo
 - `cover: true` - Add a "hero" at the top of the page
 - `katex: true` - Turn on Katex styling (JS rendering is done at build time)
 - The `clipboard` shortcode adds a clipboard button to an element such as a code

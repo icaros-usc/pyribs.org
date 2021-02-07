@@ -1,6 +1,5 @@
 ---
 layout: default.liquid
-logo: true
 title: pyribs
 description: A bare-bones quality diversity optimization library.
 tutorials:
@@ -21,6 +20,14 @@ tutorials:
 ---
 
 <div class="__index__">
+  {% comment %} Logo {% endcomment %}
+  <div class="bg-primary-dark text-center text-white p-10">
+    <img class="mx-auto mt-28 mb-4 font-thin h-36"
+         src="{{- "/imgs/logo.svg" | url -}}"
+         alt="{{- title -}}"
+    />
+    <p class="text-2xl mb-32">{{- description -}}</p>
+  </div>
 
   <div class="bg-white feature">
     <div class="feature-content">
