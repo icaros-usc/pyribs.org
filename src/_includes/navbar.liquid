@@ -54,16 +54,16 @@
 
         {%- assign entryUrl = entry.url | url -%}
         {%- if entryUrl == activeUrl -%}
-          {%- assign borderStyle = "hover:border-gray-300" -%}
+          {%- assign activeStyle = "hover:text-gray-300 hover:border-gray-300" -%}
         {%- else -%}
-          {%- assign borderStyle = "border-opacity-0" -%}
+          {%- assign activeStyle = "hover:text-white border-opacity-0
+                                    hover:border-opacity-100" -%}
         {%- endif -%}
 
         <div class="block md:inline-block mx-3 mt-3 mb-1 md:my-2">
           <a href="{{ entryUrl}}"
-             class="transition text-white hover:text-gray-300
-                    pt-1 pb-0.5 border-b-4 border-white {{ borderStyle }}"
-          >
+             class="transition pt-1 pb-0.5 text-white border-b-4 border-white
+                    {{ activeStyle }}">
             {{- entry.name -}}
           </a>
         </div>
