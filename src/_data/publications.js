@@ -19,7 +19,7 @@ module.exports = [
     entries: readEntries("src/_data/publications/cma-me.bib"),
   },
   {
-    title: "Publications Using pyribs",
+    title: "Publications using pyribs",
     message: `Have you used pyribs in a publication? If so,
               <a href="https://github.com/icaros-usc/pyribs.org/issues/new/choose">
                 Raise an Issue on GitHub
