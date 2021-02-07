@@ -21,6 +21,9 @@ module.exports = {
   // Path to Twitter preview image.
   twitterPreview: "/imgs/twitter-preview.png",
 
+  // URL to visit to raise issues about the website.
+  issues: "https://github.com/icaros-usc/pyribs.org/issues/new/choose",
+
   // Navigation links.
   navigation: [
     // {
