@@ -9,7 +9,8 @@ module.exports = {
 
   // Default description for pages. Provide "description" in the front matter of
   // a page to override this.
-  description: "A bare-bones quality-diversity optimization library.",
+  description:
+    "A bare-bones Python library for quality diversity optimization.",
 
   // Path to icon image.
   icon: "/imgs/icon.svg",
