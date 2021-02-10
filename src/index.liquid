@@ -26,7 +26,20 @@ tutorials:
          src="{{- "/imgs/logo.svg" | url -}}"
          alt="{{- title -}}"
     />
-    <p class="text-2xl mb-32">{{- description -}}</p>
+    <p class="text-2xl mb-4">{{- description -}}</p>
+    <div class="mb-24 flex">
+      <div class="flex mx-auto w-auto">
+        {%- for s in config.social -%}
+          <a href="{{- s.url -}}"
+             title="{{- s.name -}}"
+             class="flex items-center shadow w-12 h-12 mx-1 rounded-full
+                    bg-primary hover:bg-primary-semidark
+                    text-white hover:text-gray-300">
+            <i class="{{ s.fa }} mx-auto text-2xl"></i>
+          </a>
+        {%- endfor -%}
+      </div>
+    </div>
   </div>
 
   <div class="bg-white feature">

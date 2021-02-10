@@ -1,4 +1,7 @@
 // Config for the entire site.
+const twitter = "https://twitter.com/pyribs/";
+const github = "https://github.com/icaros-usc/pyribs/";
+
 module.exports = {
   name: "pyribs",
   author: "ICAROS Lab pyribs Team",
@@ -25,6 +28,20 @@ module.exports = {
   // URL to visit to raise issues about the website.
   issues: "https://github.com/icaros-usc/pyribs.org/issues/new/choose",
 
+  // Social links. "fa" is the FontAwesome code for the icon.
+  social: [
+    {
+      name: "GitHub (icaros-usc/pyribs)",
+      url: github,
+      fa: "fab fa-github",
+    },
+    {
+      name: "Twitter (@pyribs)",
+      url: twitter,
+      fa: "fab fa-twitter",
+    },
+  ],
+
   // Navigation links.
   navigation: [
     // {
@@ -45,7 +62,7 @@ module.exports = {
     },
     {
       name: "GitHub",
-      url: "https://github.com/icaros-usc/pyribs/",
+      url: github,
     },
   ],
 
@@ -69,11 +86,15 @@ module.exports = {
     },
     {
       name: "GitHub",
-      url: "https://github.com/icaros-usc/pyribs/",
+      url: github,
     },
     {
       name: "PyPI",
       url: "https://pypi.org/project/ribs/",
+    },
+    {
+      name: "Twitter",
+      url: twitter,
     },
   ],
 };
