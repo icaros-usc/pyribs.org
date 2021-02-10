@@ -5,7 +5,7 @@ const github = "https://github.com/icaros-usc/pyribs/";
 module.exports = {
   name: "pyribs",
   author: "ICAROS Lab pyribs Team",
-  baseUrl: "https://pyribs.org",
+  baseUrl: "https://pyribs.org", // No slash at the end.
 
   // Inserted directly into the copyright, i.e. "(c) {{ copyright }}".
   copyright: "ICAROS Lab 2020-2021",
