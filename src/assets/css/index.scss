@@ -17,7 +17,7 @@ html {
     @apply text-primary hover:text-secondary;
   }
   pre {
-    @apply text-sm my-5;
+    @apply text-sm;
   }
 }
 
@@ -28,6 +28,10 @@ html {
 .__index__ {
   h2 {
     @apply text-3xl sm:text-4xl text-black font-light pb-7;
+  }
+
+  pre {
+    @apply my-5;
   }
 
   div.feature {
