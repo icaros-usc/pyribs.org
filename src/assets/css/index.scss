@@ -8,6 +8,10 @@
   background-color: rgba(#c0c0c0, 0.5);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   a {
     @apply text-primary hover:text-secondary;
@@ -39,10 +43,6 @@
     pre {
       @apply sm:h-56 mb-0;
     }
-  }
-
-  pre {
-    font-size: 0.875rem;
   }
 }
 
