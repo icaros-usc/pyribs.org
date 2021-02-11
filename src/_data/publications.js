@@ -15,15 +15,15 @@ function readEntries(file) {
 
 module.exports = [
   {
-    title: "Publications on CMA-ME",
-    entries: readEntries("src/_data/publications/cma-me.bib"),
-  },
-  {
     title: "Publications using pyribs",
     message: `Have you used pyribs in a publication? If so,
               <a href="https://github.com/icaros-usc/pyribs.org/issues/new/choose">
                 Raise an Issue on GitHub
               </a> to have it listed here.`,
     entries: readEntries("src/_data/publications/pyribs.bib"),
+  },
+  {
+    title: "Publications on CMA-ME",
+    entries: readEntries("src/_data/publications/cma-me.bib"),
   },
 ];
