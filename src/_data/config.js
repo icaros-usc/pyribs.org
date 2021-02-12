@@ -63,6 +63,10 @@ module.exports = {
       url: "/publications/",
     },
     {
+      name: "Citation",
+      url: "/citation/",
+    },
+    {
       name: "GitHub",
       url: github,
     },
@@ -85,6 +89,10 @@ module.exports = {
     {
       name: "Publications",
       url: "/publications/",
+    },
+    {
+      name: "Citation",
+      url: "/citation/",
     },
     {
       name: "GitHub",
