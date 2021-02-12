@@ -1,6 +1,7 @@
 // Config for the entire site.
 const twitter = "https://twitter.com/pyribs/";
 const github = "https://github.com/icaros-usc/pyribs/";
+// const rss = "/feed.xml";
 
 module.exports = {
   name: "pyribs",
@@ -40,6 +41,11 @@ module.exports = {
       url: twitter,
       fa: "fab fa-twitter",
     },
+    // {
+    //   name: "RSS",
+    //   url: rss,
+    //   fa: "fa fa-rss",
+    // },
   ],
 
   // Navigation links.
@@ -51,10 +57,6 @@ module.exports = {
     {
       name: "Documentation",
       url: "https://docs.pyribs.org/",
-    },
-    {
-      name: "Tutorials",
-      url: "https://docs.pyribs.org/en/latest/tutorials.html",
     },
     {
       name: "Publications",
@@ -96,5 +98,9 @@ module.exports = {
       name: "Twitter",
       url: twitter,
     },
+    // {
+    //   name: "RSS",
+    //   url: rss,
+    // },
   ],
 };

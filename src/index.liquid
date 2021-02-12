@@ -28,25 +28,26 @@ tutorials:
          alt="{{- title -}}"
     />
     <p class="text-2xl mb-4">{{- description -}}</p>
-    <div class="mb-24 flex">
-      <div class="flex mx-auto w-auto">
-          <a href="#installation"
-             title="Install pyribs"
-             class="flex items-center shadow h-12 mx-1 px-5 rounded-full
-                    bg-primary hover:bg-primary-semidark
-                    text-2xl text-white hover:text-gray-300">
-            Install
-          </a>
-        {%- for s in config.social -%}
-          <a href="{{- s.url -}}"
-             title="{{- s.name -}}"
-             class="flex items-center shadow w-12 h-12 mx-1 rounded-full
-                    bg-primary hover:bg-primary-semidark
-                    text-white hover:text-gray-300">
-            <i class="{{ s.fa }} mx-auto text-2xl"></i>
-          </a>
-        {%- endfor -%}
-      </div>
+    <div class="flex flex-wrap justify-center mx-auto">
+      <a href="#installation"
+         title="Install pyribs"
+         class="header-link h-12 w-36 rounded-full mb-3">
+        Install
+      </a>
+      <a href="https://docs.pyribs.org/en/latest/tutorials.html"
+         title="Install pyribs"
+         class="header-link h-12 w-36 rounded-full mb-3">
+        Tutorials
+      </a>
+    </div>
+    <div class="mb-20 flex flex-wrap justify-center mx-auto">
+      {%- for s in config.social -%}
+        <a href="{{- s.url | url -}}"
+           title="{{- s.name -}}"
+           class="header-link h-12 w-12 rounded-full">
+          <i class="{{ s.fa }} mx-auto"></i>
+        </a>
+      {%- endfor -%}
     </div>
   </div>
 
