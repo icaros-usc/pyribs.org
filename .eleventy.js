@@ -11,6 +11,10 @@ module.exports = function (eleventyConfig) {
   // Don't use the gitignore because it will ignore src/compiled-assets.
   eleventyConfig.setUseGitIgnore(false);
 
+  // Merge array and object data like `tags` instead of overwriting.
+  eleventyConfig.setDataDeepMerge(true);
+
+  // Copy static files.
   staticFiles = ["robots.txt", "favicon.ico", "imgs/", "favicon/"];
   for (const file of staticFiles) {
     eleventyConfig.addPassthroughCopy(path.join(inputDir, file));
@@ -52,6 +56,9 @@ module.exports = function (eleventyConfig) {
 
   // Syntax highlighting.
   eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-syntaxhighlight"));
+
+  // RSS.
+  eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"));
 
   //
   // Shortcodes.
@@ -97,6 +104,7 @@ module.exports = function (eleventyConfig) {
           removeComments: true,
           sortClassName: true,
           useShortDoctype: true,
+          minifyCSS: true, // Minifying JS does not seem to work very well.
         });
         return minified;
       }

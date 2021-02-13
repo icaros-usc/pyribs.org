@@ -2,8 +2,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<title>{{ title }}</title>
+<title>{{ title }}{% if page.url != "/" %} | pyribs{% endif %}</title>
 <link rel="canonical" href="{{ config.baseUrl }}{{ page.url | url }}">
+<link rel="alternate" type="application/atom+xml"
+      title="{{- config.blog.title -}}" href="{{- "/feed.xml" | url -}}" />
 
 {%- if description -%}{%- else -%}
   {%- assign description = config.description -%}

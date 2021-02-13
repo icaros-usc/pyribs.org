@@ -2,10 +2,12 @@
 const twitter = "https://twitter.com/pyribs/";
 const github = "https://github.com/icaros-usc/pyribs/";
 const rss = "/feed.xml";
+const email = "team@pyribs.org";
 
 module.exports = {
   name: "pyribs",
   author: "ICAROS Lab pyribs Team",
+  email: email,
   baseUrl: "https://pyribs.org", // No slash at the end.
 
   // Inserted directly into the copyright, i.e. "(c) {{ copyright }}".
@@ -29,6 +31,12 @@ module.exports = {
   // URL to visit to raise issues about the website.
   issues: "https://github.com/icaros-usc/pyribs.org/issues/new/choose",
 
+  // Blog.
+  blog: {
+    title: "pyribs Blog",
+    subtitle: "Updates and announcements from the pyribs library.",
+  },
+
   // Social links. "fa" is the FontAwesome code for the icon.
   social: [
     {
@@ -42,7 +50,7 @@ module.exports = {
       fa: "fab fa-twitter",
     },
     {
-      name: "RSS",
+      name: "RSS Feed",
       url: rss,
       fa: "fa fa-rss",
     },
@@ -109,6 +117,10 @@ module.exports = {
     {
       name: "RSS",
       url: rss,
+    },
+    {
+      name: "Email",
+      url: "mailto:" + email,
     },
   ],
 };
