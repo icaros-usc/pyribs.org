@@ -23,7 +23,7 @@ tutorials:
 <div class="__index__">
   {% comment %} Logo {% endcomment %}
   <div class="bg-primary-dark text-center text-white p-10">
-    <img class="mx-auto mt-28 mb-4 font-thin h-36"
+    <img class="mx-auto mt-24 mb-4 font-thin h-36"
          src="{{- "/imgs/logo.svg" | url -}}"
          alt="{{- title -}}"
     />
@@ -40,7 +40,7 @@ tutorials:
         Tutorials
       </a>
     </div>
-    <div class="mb-20 flex flex-wrap justify-center mx-auto">
+    <div class="mb-16 flex flex-wrap justify-center mx-auto">
       {%- for s in config.social -%}
         <a href="{{- s.url | url -}}"
            title="{{- s.name -}}"
