@@ -34,7 +34,9 @@ module.exports = {
   // Blog.
   blog: {
     title: "pyribs Blog",
-    subtitle: "Updates and announcements from the pyribs library.", // Mirrors description in blog.liquid.
+
+    // Mirrors description in blog.liquid.
+    subtitle: "Updates and announcements from the pyribs library.",
   },
 
   // Social links. "fa" is the FontAwesome code for the icon.
