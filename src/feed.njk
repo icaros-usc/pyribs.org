@@ -20,6 +20,11 @@ eleventyExcludeFromCollections: true
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
+    <author>
+      <name>{{ post.data.author }}</name>
+      <uri>{{ post.data.author_url }}</uri>
+    </author>
+    <summary>{{ post.data.description }}</summary>
     <updated>{{ post.date | dateToRfc3339 }}</updated>
     <id>{{ absolutePostUrl }}</id>
     <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>

@@ -2,9 +2,6 @@
 layout: article.liquid
 title: Sample Article
 description: This is the description.
-author: Bryon Tjanaka
-author_url: https://btjanaka.net
-date: 2021-02-02t16:00:00-08:00
 tags: hi
 ---
 
