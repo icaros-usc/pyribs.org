@@ -1,5 +1,6 @@
 // Configuration for Eleventy.
 
+const cheerio = require("cheerio");
 const fs = require("fs");
 const htmlmin = require("html-minifier");
 const path = require("path");
@@ -96,6 +97,15 @@ module.exports = function (eleventyConfig) {
 
   // Minify HTML.
   if (process.env.ELEVENTY_ENV === "production") {
+    eleventyConfig.addTransform("lazy-imgs", (content, outputPath) => {
+      if (outputPath.endsWith(".html")) {
+        const article = cheerio.load(content);
+        article("img").attr("loading", "lazy");
+        return article.html();
+      }
+      return content;
+    });
+
     eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
       if (outputPath.endsWith(".html")) {
         const minified = htmlmin.minify(content, {
