@@ -25,14 +25,14 @@ description: "Updates and announcements from the pyribs library."
        class="flex flex-wrap group px-2 py-3 border-t-2 border-gray-100 w-full
               text-black">
       <p class="hidden md:block text-gray-500 md:w-1/4">
-        {{ p.date | date: "%B %d, %Y" }}
+        {{ p.date | date: "%B %e, %Y" }}
       </p>
       <div class="w-full md:w-1/2">
         <p class="font-bold md:mb-1 group-hover:text-secondary">
           {{- p.data.title -}}
         </p>
         <p class="md:hidden text-gray-500">
-          {{ p.date | date: "%B %d, %Y" }} | {{ p.data.author }}
+          {{ p.date | date: "%B %e, %Y" }} | {{ p.data.author }}
         </p>
         <p class="text-base text-black">
           {{- p.data.description -}}
