@@ -2,9 +2,37 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-{% include head/seo.liquid %}
+<title>{{ title }}</title>
+<link rel="canonical" href="{{ config.baseUrl }}{{ page.url | url }}">
 
-{%- comment -%}Stylesheets{%- endcomment -%}
+{%- if description -%}{%- else -%}
+  {%- assign description = config.description -%}
+{%- endif -%}
+<meta name="description" content="{{ description }}">
+
+
+{% comment %}Open Graph tags - see https://ogp.me for more info.{% endcomment %}
+<meta property="og:title" content="{{ title }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ config.baseUrl }}{{ page.url | url }}" />
+<meta
+  property="og:image"
+  content="{{ config.baseUrl }}{{ config.openGraph | url }}"
+/>
+<meta property="og:description" content="{{ description }}" />
+
+
+{% comment %}Twitter tags - see https://ogp.me for more info.{% endcomment %}
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="{{ title }}" />
+<meta name="twitter:description" content="{{ description }}" />
+<meta
+   name="twitter:image"
+   content="{{ config.baseUrl }}{{ config.twitterPreview | url }}"
+/>
+
+
+{% comment %}Stylesheets{% endcomment %}
 <link rel="stylesheet" href="{{ "/assets/main.css" | url }}?{{ cacheBust.mainCss }}" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
@@ -15,6 +43,16 @@
       crossorigin="anonymous">
 {%- endif -%}
 
-{% include head/favicon.liquid %}
 
-<title>{{ title }}</title>
+{% comment %}
+  Favicons - generated with https://realfavicongenerator.net from src/favicon.svg.
+{% endcomment %}
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+<link rel="manifest" href="/favicon/site.webmanifest">
+<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#7e57c2">
+<link rel="shortcut icon" href="/favicon/favicon.ico">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-config" content="/favicon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
