@@ -65,4 +65,7 @@ html {
 .__article__ {
   // Global settings for articles. Particularly useful because we cannot
   // directly apply styles in markdown.
+  a.permalink {
+    @apply no-underline font-normal;
+  }
 }

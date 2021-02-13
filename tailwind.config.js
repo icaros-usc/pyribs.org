@@ -12,7 +12,32 @@ module.exports = {
   content: ["src/**/*.html", "src/**/*.liquid", "src/**/*.md"],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            a: {
+              color: "#7e57c2",
+              "&:hover": {
+                color: "#603f8c",
+              },
+            },
+            pre: {
+              borderRadius: 0,
+            },
+            h2: {
+              fontWeight: 300,
+            },
+            h3: {
+              fontWeight: 300,
+            },
+            h4: {
+              fontWeight: 300,
+            },
+          },
+        },
+      },
+    },
     colors: {
       primary: {
         dark: "#603f8c",
@@ -40,5 +65,5 @@ module.exports = {
       display: ["group-hover", "group-focus"],
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
