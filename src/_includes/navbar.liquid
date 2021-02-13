@@ -1,89 +1,93 @@
-<nav class="flex flex-wrap items-center justify-between md:justify-start
-            w-full p-0 md:px-4 md:py-4 bg-primary"
+<nav class="w-full bg-primary"
      style="box-shadow: 0 2px 4px rgba(0,0,0,0.5)">
-  <div class="ml-5 md:ml-1 mr-2 my-4 md:my-0">
-    <a href="{{ "/" | url }}">
-      <img src="{{- config.icon | url -}}"
-           class="inline-block h-8"
-           alt="{{- config.name -}}"
-      />
-    </a>
-  </div>
+  <div class="flex flex-wrap items-center justify-between md:justify-start
+              max-w-screen-2xl mx-auto p-0 md:px-4 md:py-4">
 
-  <div class="mr-4 my-4 md:hidden">
-    <div id="hamburger"
-         class="mx-2 relative cursor-pointer
-                 transition-all duration-300 ease"
-         style="width: 26px; height: 22px">
-      <div class="hamburger-bar bar1 absolute bg-white
-                  transition-all duration-300 ease"
-           style="top: 0px; width: 26px; height: 2px">
-      </div>
-      <div class="hamburger-bar bar2 absolute bg-white
+    <div class="ml-5 md:ml-1 mr-2 my-4 md:my-0">
+      <a href="{{ "/" | url }}">
+        <img src="{{- config.icon | url -}}"
+             class="inline-block h-8"
+             alt="{{- config.name -}}"
+        />
+      </a>
+    </div>
+
+    <div class="mr-4 my-4 md:hidden">
+      <div id="hamburger"
+           class="mx-2 relative cursor-pointer
                    transition-all duration-300 ease"
-           style="top: 10px; width: 26px; height: 2px">
-      </div>
-      <div class="hamburger-bar bar3 absolute bg-white
-                  transition-all duration-300 ease"
-           style="top: 20px; width: 26px; height: 2px">
+           style="width: 26px; height: 22px">
+        <div class="hamburger-bar bar1 absolute bg-white
+                    transition-all duration-300 ease"
+             style="top: 0px; width: 26px; height: 2px">
+        </div>
+        <div class="hamburger-bar bar2 absolute bg-white
+                     transition-all duration-300 ease"
+             style="top: 10px; width: 26px; height: 2px">
+        </div>
+        <div class="hamburger-bar bar3 absolute bg-white
+                    transition-all duration-300 ease"
+             style="top: 20px; width: 26px; height: 2px">
+        </div>
       </div>
     </div>
-  </div>
-  <style>
-    /* Turns the bars into an X when the hamburger is expanded. */
-    #hamburger .bar1.expanded {
-       transform: translateY(10px) rotate(45deg);
-       transition: all 0.2s ease;
-    }
-    #hamburger .bar2.expanded {
-       opacity: 0;
-       transition: all 0.2s ease;
-    }
-    #hamburger .bar3.expanded {
-      transform: translateY(-10px) rotate(-45deg);
-       transition: all 0.2s ease;
-    }
-  </style>
+    <style>
+      /* Turns the bars into an X when the hamburger is expanded. */
+      #hamburger .bar1.expanded {
+         transform: translateY(10px) rotate(45deg);
+         transition: all 0.2s ease;
+      }
+      #hamburger .bar2.expanded {
+         opacity: 0;
+         transition: all 0.2s ease;
+      }
+      #hamburger .bar3.expanded {
+        transform: translateY(-10px) rotate(-45deg);
+         transition: all 0.2s ease;
+      }
+    </style>
 
-  {%- assign activeUrl = page.url | url -%}
-  <div class="toggle hidden md:flex w-full md:w-auto text-center md:text-left
-              pb-3 md:py-0">
-    {%- for entry in config.navigation -%}
-      {%- if entry.url -%}
-        {%- comment -%}Add a single entry.{%- endcomment -%}
+    {%- assign activeUrl = page.url | url -%}
+    <div class="toggle hidden md:flex w-full md:w-auto text-center md:text-left
+                pb-3 md:py-0">
+      {%- for entry in config.navigation -%}
+        {%- if entry.url -%}
+          {%- comment -%}Add a single entry.{%- endcomment -%}
 
-        {%- assign entryUrl = entry.url | url -%}
-        {%- if entryUrl == activeUrl -%}
-          {%- assign activeStyle = "hover:text-gray-300 hover:border-gray-300" -%}
-        {%- else -%}
-          {%- assign activeStyle = "hover:text-white border-opacity-0
-                                    hover:border-opacity-100" -%}
+          {%- assign entryUrl = entry.url | url -%}
+          {%- if entryUrl == activeUrl -%}
+            {%- assign activeStyle = "hover:text-gray-300 hover:border-gray-300" -%}
+          {%- else -%}
+            {%- assign activeStyle = "hover:text-white border-opacity-0
+                                      hover:border-opacity-100" -%}
+          {%- endif -%}
+
+          <div class="block md:inline-block mx-3 mt-3 mb-1 md:my-2">
+            <a href="{{ entryUrl}}"
+               class="transition pt-1 pb-0.5 text-white border-b-4 border-white
+                      {{ activeStyle }}">
+              {{- entry.name -}}
+            </a>
+          </div>
         {%- endif -%}
+      {%- endfor -%}
+    </div>
 
-        <div class="block md:inline-block mx-3 mt-3 mb-1 md:my-2">
-          <a href="{{ entryUrl}}"
-             class="transition pt-1 pb-0.5 text-white border-b-4 border-white
-                    {{ activeStyle }}">
-            {{- entry.name -}}
-          </a>
-        </div>
-      {%- endif -%}
-    {%- endfor -%}
+    <script>
+      document.getElementById("hamburger").onclick = function toggleMenu() {
+        // Toggle certain elements when hamburger is clicked.
+        const navToggle = document.getElementsByClassName("toggle");
+        for (let i = 0; i < navToggle.length; i++) {
+          navToggle.item(i).classList.toggle("hidden");
+        }
+
+        // Toggle the state of the hamburger itself.
+        const hamburgerBars = document.getElementsByClassName("hamburger-bar");
+        for (let i = 0; i < hamburgerBars.length; i++) {
+          hamburgerBars.item(i).classList.toggle("expanded");
+        }
+      };
+    </script>
+
   </div>
-
-  <script>
-    document.getElementById("hamburger").onclick = function toggleMenu() {
-      // Toggle certain elements when hamburger is clicked.
-      const navToggle = document.getElementsByClassName("toggle");
-      for (let i = 0; i < navToggle.length; i++) {
-        navToggle.item(i).classList.toggle("hidden");
-      }
-
-      // Toggle the state of the hamburger itself.
-      const hamburgerBars = document.getElementsByClassName("hamburger-bar");
-      for (let i = 0; i < hamburgerBars.length; i++) {
-        hamburgerBars.item(i).classList.toggle("expanded");
-      }
-    };
-  </script>
 </nav>
