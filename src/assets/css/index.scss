@@ -4,13 +4,9 @@
 
 @import "prism-material-dark";
 
-::selection {
-  background-color: rgba(#c0c0c0, 0.5);
-}
-
-html {
-  scroll-behavior: smooth;
-}
+//
+// Base styles.
+//
 
 @layer base {
   a {
@@ -19,6 +15,18 @@ html {
   pre {
     @apply text-sm;
   }
+}
+
+//
+// Scrollbar and selection.
+//
+
+::selection {
+  background-color: rgba(#c0c0c0, 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 //
