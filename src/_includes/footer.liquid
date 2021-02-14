@@ -1,34 +1,39 @@
 <div class="w-full bg-gray-900 py-4 px-6 text-center">
-  <div class="mx-auto md:mx-4">
-    <img src="{{- config.icon | url -}}"
-         class="block md:inline-block mx-auto mb-4 md:mb-3 mt-3 h-16"
-         alt="{{- config.name -}}"
-    />
-  </div>
+  <div class="max-w-screen-2xl mx-auto">
+    <div class="md:flex md:justify-center md:mt-8 md:mb-10">
+      <div class="mx-auto md:ml-0 md:mr-10 lg:mr-20">
+        <img src="{{- config.icon | url -}}"
+             class="block md:inline-block mx-auto mb-4 md:mb-3 mt-3 h-16"
+             alt="{{- config.name -}}"
+        />
+      </div>
 
-  <div class="mx-auto text-center text-bold">
-    {%- for entry in config.footer -%}
-      <a href="{{ entry.url | url }}"
-         class="transition block md:inline-block text-white hover:text-white
-                mx-3 my-1 md:my-2 hover:underline"
-      >
-        {{- entry.name -}}
-      </a>
-    {%- endfor -%}
-  </div>
+      <div class="text-bold text-center md:text-left
+                  md:grid md:grid-rows-3 md:grid-flow-col md:w-5/12">
+        {%- for entry in config.footer -%}
+          <a href="{{ entry.url | url }}"
+             class="transition block md:inline-block text-white hover:text-white
+                    mx-3 my-1 md:my-0 hover:underline"
+          >
+            {{- entry.name -}}
+          </a>
+        {%- endfor -%}
+      </div>
+    </div>
 
-  <div class="flex-wrap md:flex-nowrap flex justify-center w-full
-              text-white text-xs pt-4">
-    <p class="w-full md:w-auto order-3 md:order-1">
-      &#169; {{ config.copyright }}
-    </p>
-    <p class="hidden md:inline order-2 px-1">|</p>
-    <p class="w-full md:w-auto order-1 md:order-3 mb-1 md:mb-0">
-      See anything wrong?
-      <a class="text-white hover:text-gray-400 underline"
-         href="{{- config.issues -}}">
-        Raise an Issue
-      </a>
-    </p>
+    <div class="flex-wrap md:flex-nowrap flex justify-center w-full
+                text-white text-xs pt-4">
+      <p class="w-full md:w-auto order-3 md:order-1">
+        &#169; {{ config.copyright }}
+      </p>
+      <p class="hidden md:inline order-2 px-1">|</p>
+      <p class="w-full md:w-auto order-1 md:order-3 mb-1 md:mb-0">
+        See anything wrong?
+        <a class="text-white hover:text-gray-400 underline"
+           href="{{- config.issues -}}">
+          Raise an Issue
+        </a>
+      </p>
+    </div>
   </div>
 </div>

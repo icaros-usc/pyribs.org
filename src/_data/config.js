@@ -105,16 +105,12 @@ module.exports = {
       url: "https://docs.pyribs.org/en/latest/tutorials.html",
     },
     {
-      name: "GitHub",
-      url: github,
-    },
-    {
       name: "PyPI",
       url: "https://pypi.org/project/ribs/",
     },
     {
-      name: "Twitter",
-      url: twitter,
+      name: "GitHub",
+      url: github,
     },
     {
       name: "RSS",
@@ -123,6 +119,10 @@ module.exports = {
     {
       name: "Email",
       url: "mailto:" + email,
+    },
+    {
+      name: "Twitter",
+      url: twitter,
     },
   ],
 };
