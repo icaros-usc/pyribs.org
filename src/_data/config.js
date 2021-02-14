@@ -80,6 +80,16 @@ module.exports = {
       name: "GitHub",
       url: github,
     },
+    // Example group.
+    // {
+    //   name: "Group",
+    //   children: [
+    //     {
+    //       name: "Home",
+    //       url: "/",
+    //     },
+    //   ],
+    // },
   ],
 
   // Footer links.
