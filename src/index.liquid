@@ -270,6 +270,12 @@ plt.show()
 
           {% comment %}
             Name takes up 12/60, so each part here takes up some portion of 48.
+
+            Including these here so that Tailwind picks them up and does not
+            purge them (this is important because optWidth is a variable value
+            below).
+
+              md:w-12/60  md:w-16/60  md:w-24/60  md:w-48/60
           {% endcomment %}
           {%- assign optWidth = 48 | divided_by: choice.opts.size -%}
 
