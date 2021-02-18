@@ -91,8 +91,8 @@
 
           {%- comment -%}Add an entry with children.{%- endcomment -%}
 
-          <div class="relative group focus:outline-none block md:inline-block
-                      w-full md:w-auto">
+          <label class="relative group focus:outline-none block md:inline-block
+                        w-full md:w-auto">
             {%- comment -%}Check if this group is active.{%- endcomment -%}
             {%- assign linkStyle = inactiveLink -%}
             {%- for c in entry.children -%}
@@ -137,7 +137,7 @@
                 </div>
               {%- endfor -%}
             </div>
-          </div>
+          </label>
 
         {%- endif -%}
       {%- endfor -%}

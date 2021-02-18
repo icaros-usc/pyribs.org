@@ -1,4 +1,9 @@
 // Configuration for tailwind.css
+const customWidths = {};
+for (let i = 1; i < 60; ++i) {
+  customWidths[`${i}/60`] = `${(i / 60) * 100}%`;
+}
+
 module.exports = {
   purge: [
     "./src/**/*.html",
@@ -50,6 +55,7 @@ module.exports = {
           100: "#f3f4f7",
         },
       },
+      width: customWidths,
     },
   },
   variants: {

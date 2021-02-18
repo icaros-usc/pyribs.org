@@ -42,10 +42,6 @@ html {
     @apply flex justify-center items-center shadow mx-1 bg-primary hover:bg-primary-semidark text-white hover:text-gray-300 text-2xl;
   }
 
-  pre {
-    @apply my-5;
-  }
-
   div.feature {
     @apply px-4 pt-10 pb-8;
   }
@@ -54,11 +50,15 @@ html {
   }
 
   div.component {
-    @apply block w-full md:w-3/4 lg:w-1/3 mx-auto lg:mx-0;
+    @apply block w-full md:w-3/4 lg:w-1/3 mx-auto lg:mx-0 mt-5;
 
     pre {
       @apply sm:h-56 mb-0;
     }
+  }
+
+  input[type="radio"]:checked + label {
+    @apply bg-primary text-white;
   }
 }
 
