@@ -68,7 +68,8 @@ Refer to `package.json` for a complete list of dependencies.
 
 ## Features
 
-- `cover: true` - Add a "hero" at the top of the page
+### Global
+
 - `katex: true` - Turn on Katex styling (JS rendering is done at build time)
 - The `clipboard` shortcode adds a clipboard button to an element such as a code
   block; for example, in Liquid, use
@@ -79,6 +80,12 @@ Refer to `package.json` for a complete list of dependencies.
   {% endhighlight %}
   {% endclipboard %}
   ```
+
+### Articles
+
+- `cover: true` - Add a "hero" at the top of the page
+- `cover_img: URL` - Add an image to the background of the cover. `cover: true`
+  must also be passed in.
 
 ## Manifest
 
