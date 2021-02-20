@@ -55,15 +55,10 @@ install:
 
 <div class="__index__">
   {% comment %} Logo and Background Video {% endcomment %}
-  <div class="block relative px-10
-              bg-primary flex items-center justify-center"
-       style="width: 100%; height: calc(400/600 * 100vw * 0.6); min-height: 80vh">
-    <video autoplay muted loop
-           class="object-cover object-center absolute top-0 left-0 z-10"
-           style="width: 100%; height: 100%">
-      <source src="{{ 'imgs/lunar-lander.mp4' | url }}" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+  <div class="block relative px-10  flex items-center justify-center
+              bg-primary-dark bg-center bg-no-repeat bg-cover"
+       style="background-image: url({{"imgs/lunar-lander.gif" | url}});
+              height: calc(400/600 * 100vw * 0.6); min-height: 80vh">
     <div class="mt-0 xl:mt-16 mb-24 sm:mb-16 z-20">
       <img class="mx-auto mb-4 font-thin h-36"
            src="{{- "/imgs/logo.svg" | url -}}"
