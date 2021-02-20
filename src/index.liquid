@@ -55,34 +55,37 @@ install:
 
 <div class="__index__">
   {% comment %} Logo {% endcomment %}
-  <div class="text-center text-white p-10
+  <div class="text-center text-white p-10 flex items-center justify-center
               bg-primary-dark bg-center bg-no-repeat bg-cover"
-       style="background-image: url({{"imgs/lunar-lander.gif" | url}})">
-    <img class="mx-auto mt-24 mb-4 font-thin h-36"
-         src="{{- "/imgs/logo.svg" | url -}}"
-         alt="{{- title -}}"
-    />
-    <p class="text-2xl mb-4">{{- description -}}</p>
-    <div class="flex flex-wrap justify-center mx-auto">
-      <a href="#installation"
-         title="Install pyribs"
-         class="header-link h-12 w-full sm:w-36 rounded-full mb-2.5">
-        Install
-      </a>
-      <a href="https://docs.pyribs.org/en/latest/tutorials.html"
-         title="Visit the tutorials"
-         class="header-link h-12 w-full sm:w-36 rounded-full mb-2.5">
-        Tutorials
-      </a>
-    </div>
-    <div class="mb-16 flex flex-wrap justify-center mx-auto">
-      {%- for s in config.social -%}
-        <a href="{{- s.url | url -}}"
-           title="{{- s.name -}}"
-           class="header-link h-12 w-12 rounded-full">
-          <i class="{{ s.fa }} mx-auto"></i>
+       style="background-image: url({{"imgs/lunar-lander.gif" | url}});
+              min-height: calc(400/600 * 100vw * 0.6)">
+    <div class="my-16">
+      <img class="mx-auto mb-4 font-thin h-36"
+           src="{{- "/imgs/logo.svg" | url -}}"
+           alt="{{- title -}}"
+      />
+      <p class="text-2xl mb-4">{{- description -}}</p>
+      <div class="flex flex-wrap justify-center mx-auto">
+        <a href="#installation"
+           title="Install pyribs"
+           class="header-link h-12 w-full sm:w-36 rounded-full mb-2.5">
+          Install
         </a>
-      {%- endfor -%}
+        <a href="https://docs.pyribs.org/en/latest/tutorials.html"
+           title="Visit the tutorials"
+           class="header-link h-12 w-full sm:w-36 rounded-full mb-2.5">
+          Tutorials
+        </a>
+      </div>
+      <div class="flex flex-wrap justify-center mx-auto">
+        {%- for s in config.social -%}
+          <a href="{{- s.url | url -}}"
+             title="{{- s.name -}}"
+             class="header-link h-12 w-12 rounded-full">
+            <i class="{{ s.fa }} mx-auto"></i>
+          </a>
+        {%- endfor -%}
+      </div>
     </div>
   </div>
 
