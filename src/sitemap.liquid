@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
     {% for page in collections.all %}
     <url>
         <loc>{{ config.baseUrl }}{{ page.url | url }}</loc>
-        <lastmod>{{ page.date.toISOString() }}</lastmod>
+        <lastmod>{{ page.date | date: "%Y-%m-%dT%H:%M:%S%z" }}</lastmod>
         <changefreq>
           {%- if page.data.changeFreq -%}
             {{- page.data.changeFreq -}}
