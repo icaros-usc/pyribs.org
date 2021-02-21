@@ -55,11 +55,11 @@ install:
 
 <div class="__index__">
   {% comment %} Logo and Background Video {% endcomment %}
-  <div class="block relative p-5 bg-white"
+  <div class="block relative p-5 bg-black"
        style="min-height: calc(400/600 * 100vw * 0.6);">
     <video src="{{ "/imgs/lunar-lander.mp4" | url }}"
            type="video/mp4"
-           autoplay muted playsinline loop
+           autoplay muted playsinline loop preload="auto"
            class="absolute top-0 left-0 object-cover object-bottom
                   w-full h-full">
     </video>
