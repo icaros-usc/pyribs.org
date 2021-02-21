@@ -55,11 +55,15 @@ install:
 
 <div class="__index__">
   {% comment %} Logo and Background Video {% endcomment %}
-  <div class="block p-5
-              bg-white bg-bottom bg-no-repeat bg-cover"
-       style="background-image: url({{"imgs/lunar-lander.gif" | url}});
-              min-height: calc(400/600 * 100vw * 0.6);">
-    <div class="my-24">
+  <div class="block relative p-5 bg-white"
+       style="min-height: calc(400/600 * 100vw * 0.6);">
+    <video src="{{ "/imgs/lunar-lander.mp4" | url }}"
+           type="video/mp4"
+           autoplay muted playsinline loop
+           class="absolute top-0 left-0 object-cover object-bottom
+                  w-full h-full">
+    </video>
+    <div class="my-24 relative">
       <img class="mx-auto mb-4 font-thin w-full max-w-lg"
            src="{{- "/imgs/logo.svg" | url -}}"
            alt="{{- title -}}"
