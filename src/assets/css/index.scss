@@ -58,7 +58,7 @@ html {
   }
 
   input[type="radio"]:checked + label {
-    @apply bg-primary text-white;
+    @apply bg-primary hover:bg-primary-dark text-white;
   }
 }
 
