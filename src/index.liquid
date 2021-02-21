@@ -56,12 +56,16 @@ install:
 <div class="__index__">
   {% comment %} Logo and Background Video {% endcomment %}
   <div class="block relative p-5 bg-black"
-       style="min-height: calc(400/600 * 100vw * 0.6);">
+       style="min-height: 40vw">
+    {% comment %}
+      101% height to hide the background, which sometimes shows up a bit.
+    {% endcomment %}
     <video src="{{ "/imgs/lunar-lander.mp4" | url }}"
            type="video/mp4"
            autoplay muted playsinline loop preload="auto"
            class="absolute top-0 left-0 object-cover object-bottom
-                  w-full h-full">
+                   w-full"
+           style="height: 101%">
     </video>
     <div class="my-24 relative">
       <img class="mx-auto mb-4 font-thin w-full max-w-lg"
