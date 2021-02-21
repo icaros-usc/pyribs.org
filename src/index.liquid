@@ -99,9 +99,10 @@ install:
         </p>
       </div>
       <div class="lg:w-2/3">
-        <img class="hidden sm:block mx-auto"
-             alt="CMA-ME vs. MAP-Elites"
-             src="{{ 'imgs/comparison.gif' | url }}" />
+        <video autoplay muted playsinline loop
+          class="hidden sm:block mx-auto"
+          src="{{ '/imgs/comparison.mp4' | url }}" type="video/mp4">
+        </video>
         {% comment %}
           These show two portions of the same video, so that the heatmaps can be
           stacked. The padding-bottom is based on video size.
