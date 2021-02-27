@@ -29,7 +29,7 @@ info._</u>
 
 Many thanks to the folks at [conda-forge](https://conda-forge.org) for helping
 us set up the packages. For further reference, these are the links to the
-packages on Anaconda.org:
+packages on `Anaconda.org`:
 
 - [pyribs](https://anaconda.org/conda-forge/pyribs)
 - [pyribs-base](https://anaconda.org/conda-forge/pyribs-base)
