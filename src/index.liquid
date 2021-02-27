@@ -32,6 +32,8 @@ install:
       - name: Pip
         id: i-pip
         checked: true
+      - name: Conda
+        id: i-conda
       - name: Source
         id: i-source
   commands:
@@ -41,6 +43,12 @@ install:
     - ids: [i-full, i-pip]
       steps:
       - "pip install ribs[all]"
+    - ids: [i-base, i-conda]
+      steps:
+      - "conda install -c conda-forge pyribs-base"
+    - ids: [i-full, i-conda]
+      steps:
+      - "conda install -c conda-forge pyribs"
     - ids: [i-base, i-source]
       steps:
       - git clone https://github.com/icaros-usc/pyribs
