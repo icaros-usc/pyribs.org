@@ -4,6 +4,9 @@ for (let i = 1; i < 60; ++i) {
   customWidths[`${i}/60`] = `${(i / 60) * 100}%`;
 }
 
+const primaryDefault = "#7e57c2";
+const secondaryDefault = "#e040fb";
+
 module.exports = {
   purge: [
     "./src/**/*.html",
@@ -20,9 +23,11 @@ module.exports = {
         DEFAULT: {
           css: {
             a: {
-              color: "#7e57c2",
+              color: primaryDefault,
+              fontWeight: "normal",
+              textDecoration: "none",
               "&:hover": {
-                color: "#603f8c",
+                color: secondaryDefault,
               },
             },
             pre: {
@@ -44,11 +49,11 @@ module.exports = {
         primary: {
           dark: "#603f8c",
           semidark: "#6f4ba7",
-          DEFAULT: "#7e57c2",
+          DEFAULT: primaryDefault,
           light: "#f1eafd",
         },
         secondary: {
-          DEFAULT: "#e040fb",
+          DEFAULT: secondaryDefault,
         },
         light: "rgba(0,0,0,0.54)",
         gray: {
