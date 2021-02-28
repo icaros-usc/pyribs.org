@@ -4,6 +4,7 @@ for (let i = 1; i < 60; ++i) {
   customWidths[`${i}/60`] = `${(i / 60) * 100}%`;
 }
 
+const gray100 = "#f3f4f7";
 const primaryDefault = "#7e57c2";
 const secondaryDefault = "#e040fb";
 
@@ -28,6 +29,17 @@ module.exports = {
               textDecoration: "none",
               "&:hover": {
                 color: secondaryDefault,
+              },
+            },
+            code: {
+              backgroundColor: gray100,
+              padding: "0.2rem",
+              fontWeight: "normal",
+              "&::before": {
+                content: '"" !important',
+              },
+              "&::after": {
+                content: '"" !important',
               },
             },
             pre: {
@@ -57,7 +69,7 @@ module.exports = {
         },
         light: "rgba(0,0,0,0.54)",
         gray: {
-          100: "#f3f4f7",
+          100: gray100,
         },
       },
       width: customWidths,
