@@ -112,7 +112,7 @@ module.exports = {
     },
     {
       name: "Tutorials",
-      url: "https://docs.pyribs.org/en/latest/tutorials.html",
+      url: "https://docs.pyribs.org/en/stable/tutorials.html",
     },
     {
       name: "PyPI",
