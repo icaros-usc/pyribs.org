@@ -3,7 +3,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7eb5a678-d4fa-4403-a76a-a6fa63159f04/deploy-status)](https://app.netlify.com/sites/pyribs/deploys)
 
 Source code for the pyribs website at <https://pyribs.org>. This website is an
-[Eleventy](https://11ty.dev) hosted on [Netlify](https://netlify.com).
+[Eleventy](https://11ty.dev) site hosted on [Netlify](https://netlify.com).
 
 ## Instructions
 
