@@ -373,12 +373,12 @@ plt.show()
       <div class="text-center">
       {%- for t in tutorials -%}
         <a class="w-72 block md:inline-block mx-auto md:mx-4 mt-8
-                  cursor-pointer shadow max-w-full bg-white"
+                  cursor-pointer shadow max-w-full bg-white group"
            href="{{ t.url | url }}">
           <img class="w-full"
                style="{%- if t.pixelate -%}image-rendering: pixelated{%- endif -%}"
                alt="{{ t.name }}" src="{{ t.img | url }}" />
-          <p class="bg-white p-4 border-t-2 border-gray-100">
+          <p class="bg-white group-hover:bg-gray-100 p-4 border-t-2 border-gray-100">
             {{- t.name -}}
           </p>
         </a>

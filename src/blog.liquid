@@ -23,12 +23,13 @@ description: "Updates and announcements from the pyribs library."
     {%- for p in posts -%}
     <a href="{{- p.url | url -}}"
        class="flex flex-wrap group px-2 py-3 border-t-2 border-gray-100 w-full
-              text-black">
+              text-black hover:no-underline hover:bg-gray-100">
       <p class="hidden md:block text-gray-500 md:w-1/4">
         {{ p.date | date: "%B %e, %Y" }}
       </p>
       <div class="w-full md:w-1/2">
-        <p class="font-bold md:mb-1 group-hover:text-secondary">
+        <p class="font-bold md:mb-1 group-hover:text-secondary
+                  group-hover:underline">
           {{- p.data.title -}}
         </p>
         <p class="md:hidden text-gray-500">

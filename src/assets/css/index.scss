@@ -10,7 +10,7 @@
 
 @layer base {
   a {
-    @apply text-primary hover:text-secondary;
+    @apply text-primary hover:text-secondary hover:underline;
   }
   pre {
     @apply text-sm;
@@ -39,7 +39,7 @@ html {
   }
 
   a.header-link {
-    @apply flex justify-center items-center shadow mx-1 bg-primary hover:bg-primary-semidark text-white hover:text-gray-300 text-2xl;
+    @apply flex justify-center items-center shadow mx-1 bg-primary hover:bg-primary-semidark text-white hover:text-gray-300 hover:no-underline text-2xl;
   }
 
   div.feature {

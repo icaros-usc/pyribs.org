@@ -29,6 +29,7 @@ module.exports = {
               textDecoration: "none",
               "&:hover": {
                 color: secondaryDefault,
+                textDecoration: "underline",
               },
             },
             code: {
