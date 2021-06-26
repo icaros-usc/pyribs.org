@@ -3,9 +3,13 @@
   <div class="flex flex-wrap items-center justify-between md:justify-start
               max-w-screen-2xl mx-auto p-0 md:px-4">
 
-    {% comment %}Icon.{% endcomment %}
+    {% comment %}
+      Icon. Extra padding compensates for the border on the bottom so the logo
+      is still centered.
+    {% endcomment %}
     <div class="transition ml-5 md:ml-1 mr-2 my-4 md:my-0 z-50 border-white
-                border-b-4 border-opacity-0 hover:border-opacity-100">
+                border-b-4 border-opacity-0 hover:border-opacity-100"
+         style="padding-top: 4px">
       <a href="{{ "/" | url }}">
         <img src="{{- config.icon | url -}}"
              class="inline-block h-8"
