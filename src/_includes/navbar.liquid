@@ -4,7 +4,8 @@
               max-w-screen-2xl mx-auto p-0 md:px-4">
 
     {% comment %}Icon.{% endcomment %}
-    <div class="ml-5 md:ml-1 mr-2 my-4 md:my-0 z-50">
+    <div class="ml-5 md:ml-1 mr-2 my-4 md:my-0 z-50 border-white
+                border-b-4 border-opacity-0 hover:border-opacity-100">
       <a href="{{ "/" | url }}">
         <img src="{{- config.icon | url -}}"
              class="inline-block h-8"
@@ -28,14 +29,14 @@
     <div class="nav-hamburger mr-4 my-4 md:hidden">
       <div id="hamburger"
            class="mx-2 relative cursor-pointer
-                   transition-all duration-300 ease"
+                  transition-all duration-300 ease"
            style="width: 26px; height: 22px">
         <div class="hamburger-bar bar1 absolute bg-white
                     transition-all duration-300 ease"
              style="top: 0px; width: 26px; height: 2px">
         </div>
         <div class="hamburger-bar bar2 absolute bg-white
-                     transition-all duration-300 ease"
+                    transition-all duration-300 ease"
              style="top: 10px; width: 26px; height: 2px">
         </div>
         <div class="hamburger-bar bar3 absolute bg-white
