@@ -55,6 +55,9 @@ module.exports = {
             h4: {
               fontWeight: 300,
             },
+            figcaption: {
+              textAlign: "center",
+            },
           },
         },
       },
