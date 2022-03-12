@@ -5,3 +5,7 @@ npm install
 npm run build
 npm test
 """
+
+[[redirects]]
+from = "/installation"
+to = "/#installation"
