@@ -195,15 +195,14 @@ emitters = [
         archive,
         x0=[0.0] * 10,
         sigma0=0.1,
-    ),
+    ) for _ in range(3)
 ]
 {% endhighlight %}
 {% endclipboard %}
             <p class="p-3 lg:h-28 bg-white">
               <a href="https://docs.pyribs.org/en/stable/api/ribs.emitters.html">
-              Emitters</a> control how new candidate solutions are
-              generated and affect if the algorithm prioritizes quality or
-              diversity.
+              Emitters</a> control how new candidate solutions are generated and
+              affect whether the algorithm prioritizes quality or diversity.
             </p>
           </div>
         </div>
