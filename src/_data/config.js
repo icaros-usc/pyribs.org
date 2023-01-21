@@ -65,10 +65,6 @@ module.exports = {
       url: "/blog/",
     },
     {
-      name: "Publications",
-      url: "/publications/",
-    },
-    {
       name: "Citation",
       url: "/citation/",
     },
@@ -97,10 +93,6 @@ module.exports = {
     {
       name: "Blog",
       url: "/blog/",
-    },
-    {
-      name: "Publications",
-      url: "/publications/",
     },
     {
       name: "Citation",
