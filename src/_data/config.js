@@ -105,7 +105,12 @@ module.exports = {
     },
     {
       name: "Citation",
-      url: "/citation/",
+      url: "https://github.com/icaros-usc/pyribs/#citation",
+    },
+    {
+      name: "Google Scholar",
+      url:
+        "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=16246392515630874608",
     },
     {
       name: "Documentation",
