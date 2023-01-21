@@ -37,7 +37,7 @@ layout: base.liquid
       {%- endunless -%}
 
       <div class="flex flex-wrap md:flex-nowrap justify-between">
-        <a class="mt-1" href="{{- author_url -}}">{{- author -}}</a>
+        <a class="mt-1 default" href="{{- author_url -}}">{{- author -}}</a>
         {%- unless hide_date -%}
         <span class="mt-1">
           <i class="far fa-calendar-alt"></i> {{ page.date | date: "%B %e, %Y" }}
@@ -48,7 +48,7 @@ layout: base.liquid
   </div>
   {%- endif -%}
 
-  <article class="prose max-w-screen-lg mx-auto px-4 mb-8">
+  <article class="prose max-w-screen-lg mx-auto px-4 mb-8 mt-4">
     {{ content }}
   </article>
 </div>
