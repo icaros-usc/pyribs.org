@@ -2,7 +2,7 @@
 build/
 
 # Webpack output
-src/compiled-assets
+src/_compiled-assets
 
 # JavaScript
 node_modules/

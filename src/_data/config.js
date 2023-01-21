@@ -4,14 +4,16 @@ const github = "https://github.com/icaros-usc/pyribs/";
 const rss = "/feed.xml";
 const email = "team@pyribs.org";
 
+// Prefix, e.g. https://example.com/PREFIX - replace "template" below. Set to
+// empty string if there is no prefix.
+const prefix = ""; // No slash at the end.
+
 module.exports = {
   name: "pyribs",
   author: "ICAROS Lab pyribs Team",
-  email: email,
-  baseUrl: "https://pyribs.org", // No slash at the end.
-
-  // Inserted directly into the copyright, i.e. "(c) {{ copyright }}".
-  copyright: `ICAROS Lab 2021-${new Date().getFullYear()}`,
+  email,
+  hostname: "https://pyribs.org", // No slash at the end.
+  pathPrefix: process.env.ELEVENTY_ENV === "development" ? "/dev" : `${prefix}`,
 
   // Default description for pages. Provide "description" in the front matter of
   // a page to override this.
@@ -19,7 +21,11 @@ module.exports = {
     "A bare-bones Python library for quality diversity optimization.",
 
   // Path to icon image.
-  icon: "/imgs/icon.svg",
+  icon: {
+    url: "/imgs/icon.svg",
+    width: "49",
+    height: "44",
+  },
 
   // Path to Open Graph image. Change this URL whenever the image changes so
   // that sites like FB change their preview.
@@ -66,7 +72,17 @@ module.exports = {
     },
     {
       name: "Citation",
-      url: "/citation/",
+      children: [
+        {
+          name: "Citing pyribs",
+          url: "https://github.com/icaros-usc/pyribs/#citation",
+        },
+        {
+          name: "Google Scholar",
+          url:
+            "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=16246392515630874608",
+        },
+      ],
     },
     {
       name: "Documentation",
@@ -76,15 +92,6 @@ module.exports = {
       name: "GitHub",
       url: github,
     },
-    // Example group.
-    // {
-    //   name: "Group",
-    //   children: [
-    //     {
-    //       name: "Home",
-    //       url: "/",
-    //     },
-    //   ],
     // },
   ],
 
@@ -93,6 +100,8 @@ module.exports = {
     {
       name: "Blog",
       url: "/blog/",
+      fa: "fas fa-link",
+      textColor: "text-gray-400",
     },
     {
       name: "Citation",
@@ -120,7 +129,7 @@ module.exports = {
     },
     {
       name: "Email",
-      url: "mailto:" + email,
+      url: `mailto: ${email}`,
     },
     {
       name: "Twitter",

@@ -1,34 +1,38 @@
 // Configuration for tailwind.css
+// const colors = require("tailwindcss/colors");
+
 const customWidths = {};
 for (let i = 1; i < 60; ++i) {
   customWidths[`${i}/60`] = `${(i / 60) * 100}%`;
 }
 
+const primary = {
+  dark: "#603f8c",
+  semidark: "#6f4ba7",
+  DEFAULT: "#7e57c2",
+  light: "#f1eafd",
+};
+const secondary = {
+  DEFAULT: "#e040fb",
+};
 const gray100 = "#f3f4f7";
-const primaryDefault = "#7e57c2";
-const secondaryDefault = "#e040fb";
 
 module.exports = {
-  purge: [
-    "./src/**/*.html",
-    "./src/**/*.js",
-    "./src/**/*.liquid",
-    "./src/**/*.md",
+  content: [
+    "./src/**/*.{html,js,jsx,liquid,md}",
     ".eleventy.js", // We generate some markup in the shortcodes listed here.
   ],
-  content: ["src/**/*.html", "src/**/*.liquid", "src/**/*.md"],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: "class",
   theme: {
     extend: {
       typography: {
         DEFAULT: {
           css: {
             a: {
-              color: primaryDefault,
-              fontWeight: "normal",
+              color: primary.DEFAULT,
               textDecoration: "none",
               "&:hover": {
-                color: secondaryDefault,
+                color: secondary.Default,
                 textDecoration: "underline",
               },
             },
@@ -62,27 +66,14 @@ module.exports = {
         },
       },
       colors: {
-        primary: {
-          dark: "#603f8c",
-          semidark: "#6f4ba7",
-          DEFAULT: primaryDefault,
-          light: "#f1eafd",
-        },
-        secondary: {
-          DEFAULT: secondaryDefault,
-        },
+        primary,
+        secondary,
         light: "rgba(0,0,0,0.54)",
         gray: {
           100: gray100,
         },
       },
       width: customWidths,
-    },
-  },
-  variants: {
-    extend: {
-      backgroundColor: ["active"],
-      display: ["group-hover", "group-focus"],
     },
   },
   plugins: [require("@tailwindcss/typography")],

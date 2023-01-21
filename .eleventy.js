@@ -1,32 +1,37 @@
 // Configuration for Eleventy.
 
+const { EleventyRenderPlugin } = require("@11ty/eleventy");
+const QRCode = require("qrcode");
 const cheerio = require("cheerio");
 const fs = require("fs");
 const htmlmin = require("html-minifier");
 const path = require("path");
+const configData = require("./src/_data/config.js");
 
 module.exports = function (eleventyConfig) {
   const inputDir = "src";
   const outputDir = "build";
 
-  // Don't use the gitignore because it will ignore src/compiled-assets.
+  // Don't use the gitignore because it will ignore _compiled-assets.
   eleventyConfig.setUseGitIgnore(false);
 
   // Merge array and object data like `tags` instead of overwriting.
   eleventyConfig.setDataDeepMerge(true);
 
+  // _webpack/ is built and placed in src/_compiled-assets/, where Eleventy
+  // detects the change and copies the new assets to build/assets/.
+  eleventyConfig.addPassthroughCopy({
+    [path.join(inputDir, "_compiled-assets")]: "assets/",
+  });
+
   // Copy static files.
-  staticFiles = ["robots.txt", "favicon.ico", "imgs/", "favicon/"];
-  for (const file of staticFiles) {
+  for (const file of [
+    "**/*.{jpg,jpeg,png,svg,mp4,mp3,pdf}",
+    // Copy additional static (non-compiled) assets.
+    "assets/",
+  ]) {
     eleventyConfig.addPassthroughCopy(path.join(inputDir, file));
   }
-
-  // Webpack files.
-  eleventyConfig.addWatchTarget("./src/compiled-assets/main.css");
-  eleventyConfig.addWatchTarget("./src/compiled-assets/main.js");
-  eleventyConfig.addWatchTarget("./src/compiled-assets/vendor.js");
-  // Copy src/compiled-assets to /assets.
-  eleventyConfig.addPassthroughCopy({ "src/compiled-assets": "assets" });
 
   // Markdown parsing with markdown-it.
   const markdownLib = require("markdown-it")({
@@ -55,23 +60,40 @@ module.exports = function (eleventyConfig) {
     });
   eleventyConfig.setLibrary("md", markdownLib);
 
+  // renderTemplate and renderFile - https://www.11ty.dev/docs/plugins/render/
+  eleventyConfig.addPlugin(EleventyRenderPlugin);
+
   // Syntax highlighting.
   eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-syntaxhighlight"));
 
   // RSS.
   eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"));
 
+  // Eleventy favicon.
+  eleventyConfig.addPlugin(require("./eleventy/favicon-plugin.js"), {
+    destination: outputDir,
+    pathPrefix: configData.pathPrefix,
+    appleBkgdColor: "black",
+    applePad: 15,
+  });
+
   //
-  // Shortcodes.
+  // Shortcodes and filters.
   //
 
+  // Sanitizes a phone number so it is just a string of digits.
+  eleventyConfig.addFilter("sanitizePhone", (phone) => {
+    return phone.replace(/[^\d]/g, "");
+  });
+
   // Clipboard button using clipboard.js.
+  //
   // Usage: Make sure clipboard.js is included on the page and initialized (this
-  // is done in _includes/scripts.liquid). Then, add {% clipboard %} before the
-  // text to be copied and add {% endclipboard %} after the text to be copied.
+  // is done in index.jsx). Then, add {% clipboard %} before the text to be
+  // copied and add {% endclipboard %} after the text to be copied.
   let clipboardId = 0;
-  eleventyConfig.addPairedShortcode("clipboard", function (content) {
-    const id = `clipboard-${clipboardId}`;
+  eleventyConfig.addPairedShortcode("clipboard", (content) => {
+    const id = `__clipboard__${clipboardId}`;
     ++clipboardId;
     return `
 <div class="relative">
@@ -80,14 +102,13 @@ module.exports = function (eleventyConfig) {
   </div>
   <button class="clipboard group transition cursor-pointer flex items-center
                  absolute right-0 top-0 p-2
-                 text-xs text-gray-400 hover:text-white focus:text-white
-                 hover:bg-gray-800 hover:bg-opacity-50
-                 focus:bg-gray-800 focus:bg-opacity-50 focus:outline-none"
+                 text-xs text-gray-400 hover:text-white focus:text-white"
+          aria-label="Copy citation"
           data-clipboard-target="#${id}">
-      <span class="pr-2 hidden group-hover:inline-block group-focus:hidden">
+      <span class="pr-2 hidden group-hover:inline-block group-focus:inline-block group-active:hidden">
         Copy
       </span>
-      <span class="pr-2 hidden group-hover:hidden group-focus:inline-block">
+      <span class="pr-2 hidden group-active:inline-block">
         Copied!
       </span>
       <span class="material-icons">content_copy</span>
@@ -95,17 +116,35 @@ module.exports = function (eleventyConfig) {
 </div>`;
   });
 
+  // YouTube videos.
+  eleventyConfig.addShortcode("youtube", (id, title) => {
+    return `
+<div class="relative w-full h-0"
+     style="padding-bottom: 56.25%">
+  <iframe
+    title="${title}"
+    class="absolute top-0 left-0 w-full h-full"
+    src="https://www.youtube.com/embed/${id}"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>`;
+  });
+
+  // Make images lazy, but only if they do not already have the "loading"
+  // attribute.
+  eleventyConfig.addTransform("lazy-imgs", (content, outputPath) => {
+    if (outputPath.endsWith(".html")) {
+      const article = cheerio.load(content);
+      article("img:not([loading])").attr("loading", "lazy");
+      return article.html();
+    }
+    return content;
+  });
+
   // Minify HTML.
   if (process.env.ELEVENTY_ENV === "production") {
-    eleventyConfig.addTransform("lazy-imgs", (content, outputPath) => {
-      if (outputPath.endsWith(".html")) {
-        const article = cheerio.load(content);
-        article("img").attr("loading", "lazy");
-        return article.html();
-      }
-      return content;
-    });
-
     eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
       if (outputPath.endsWith(".html")) {
         const minified = htmlmin.minify(content, {
@@ -122,6 +161,17 @@ module.exports = function (eleventyConfig) {
     });
   }
 
+  // QR Codes -- thanks to this tutorial for the idea:
+  // https://www.raymondcamden.com/2021/10/13/adding-pdf-output-supports-to-eleventy
+  // The code is generated with the qrcode package:
+  // https://www.npmjs.com/package/qrcode
+  eleventyConfig.addTransform("qrcode", (content, outputPath) => {
+    if (outputPath.endsWith(".qrcode.svg")) {
+      return QRCode.toString(content.trim(), { type: "svg", margin: 1 });
+    }
+    return content;
+  });
+
   // BrowserSync settings.
   eleventyConfig.setBrowserSyncConfig({
     port: 3000,
@@ -137,7 +187,7 @@ module.exports = function (eleventyConfig) {
     listen: "localhost",
     // See https://www.11ty.dev/docs/quicktips/not-found/
     callbacks: {
-      ready: function (err, bs) {
+      ready: (err, bs) => {
         bs.addMiddleware("*", (req, res) => {
           // Provides the 404 content without redirect.
           const content404 = fs.readFileSync("build/404.html");
@@ -156,10 +206,6 @@ module.exports = function (eleventyConfig) {
       layouts: "_layouts",
     },
     markdownTemplateEngine: "liquid",
-
-    // Using /dev in development helps catch instances where we depend on assets
-    // to be hosted at / (in these cases, we should be using Eleventy's "url"
-    // Liquid filter.
-    pathPrefix: process.env.ELEVENTY_ENV === "development" ? "/dev" : "/",
+    pathPrefix: configData.pathPrefix,
   };
 };

@@ -1,23 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    {% include head.liquid %}
-  </head>
-  <body class="flex flex-col min-h-screen">
-    <div style="min-height: 80vh">
-      <header>
-        {% include navbar.liquid %}
-      </header>
-      <main class="flex-grow">
-        {{ content }}
-      </main>
-    </div>
-    <div class="flex-grow">
-      {% comment %}Filler space to ensure min-h-screen is satisfied.{% endcomment %}
-    </div>
-    <footer>
-      {% include footer.liquid %}
-    </footer>
-    {% include scripts.liquid %}
-  </body>
-</html>
+---
+layout: base.liquid
+---
+<div class="max-w-screen-xl mx-auto px-4 py-10">
+  {{ content }}
+</div>
