@@ -30,6 +30,7 @@ module.exports = {
           css: {
             a: {
               color: primary.DEFAULT,
+              fontWeight: "bold",
               textDecoration: "none",
               "&:hover": {
                 color: secondary.Default,
