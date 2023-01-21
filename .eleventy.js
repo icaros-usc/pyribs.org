@@ -73,7 +73,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(require("./eleventy/favicon-plugin.js"), {
     destination: outputDir,
     pathPrefix: configData.pathPrefix,
-    appleBkgdColor: "black",
+    appleBkgdColor: "#7e57c2",
     applePad: 15,
   });
 
