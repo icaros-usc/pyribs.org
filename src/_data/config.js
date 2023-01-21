@@ -100,45 +100,58 @@ module.exports = {
     {
       name: "Blog",
       url: "/blog/",
-      fa: "fas fa-link",
-      textColor: "text-gray-400",
+      fa: "fas fa-comment-dots",
+      textColor: "text-blue-300",
     },
     {
       name: "Citation",
       url: "https://github.com/icaros-usc/pyribs/#citation",
+      fa: "fas fa-link",
+      textColor: "text-green-400",
     },
     {
       name: "Google Scholar",
       url:
         "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=16246392515630874608",
+      fa: "ai ai-google-scholar-square",
+      textColor: "text-[#4d90fe]",
     },
     {
       name: "Documentation",
       url: "https://docs.pyribs.org/",
+      fa: "fas fa-book",
+      textColor: "text-primary",
     },
     {
       name: "Tutorials",
       url: "https://docs.pyribs.org/en/stable/tutorials.html",
+      fa: "fas fa-graduation-cap",
+      textColor: "text-orange-400",
     },
     {
       name: "PyPI",
       url: "https://pypi.org/project/ribs/",
+      fa: "fab fa-python",
+      textColor: "text-[#0073b7]",
     },
     {
       name: "GitHub",
       url: github,
+      fa: "fab fa-github",
+      textColor: "text-white",
     },
     {
       name: "RSS",
       url: rss,
-    },
-    {
-      name: "Email",
-      url: `mailto: ${email}`,
+      fa: "fas fa-rss",
+      textColor: "text-orange-500",
     },
     {
       name: "Twitter",
+      desc: "@pyribs",
       url: twitter,
+      fa: "fab fa-twitter",
+      textColor: "text-[#2f9bf0]", // Twitter logo color.
     },
   ],
 };

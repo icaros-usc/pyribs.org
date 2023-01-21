@@ -29,21 +29,19 @@ Pass options as a `header` dictionary, with the following keys:
       </div>
 
       {% comment %} Contact links. {% endcomment %}
-      <div class="w-full sm:w-1/2 md:w-2/3 lg:w-7/12 pt-6 sm:pt-0
+      <div class="w-full sm:w-1/2 md:w-7/12 pt-6 sm:pt-0
                   text-center sm:text-left">
-        <ul class="inline-block text-left sm:ml-12
-                   md:grid md:grid-flow-col md:grid-rows-4 md:gap-x-1">
+        <ul class="inline-block text-left
+                   ml-3 sm:ml-8 md:ml-0
+                   md:grid md:grid-flow-col md:grid-rows-5 md:gap-x-1">
           {% assign links = config.footer %}
           {%- for s in links -%}
-          <li class="py-1 group flex items-center">
+          <li class="py-1">
             <a href="{{ s.url | url }}"
-               class="group">
+               class="group"
+               style="text-decoration: none !important;">
               {% comment %}
                 Icon: Either FontAwesome, Material, or img
-
-                Currently there is an issue where if the background is clear,
-                some icons do not have good contrast -- we will ignore this for
-                now since the text is still visible.
               {% endcomment %}
               {% if s.fa %}
                 <i class="{{ s.fa }} {{ s.textColor }}
@@ -64,8 +62,8 @@ Pass options as a `header` dictionary, with the following keys:
                      aria-hidden="true" />
               {% endif %}
 
-              <span class="ml-0.5 font-bold text-sm group-hover:underline
-                           align-middle">
+              <span class="ml-0.5 text-sm group-hover:underline align-middle
+                           text-white">
                 {{ s.name }}{% if s.desc %} ({{ s.desc }}){% endif %}
               </span>
             </a>
