@@ -376,21 +376,23 @@ plt.show()
         <a href="https://colab.research.google.com/github/icaros-usc/pyribs/blob/master/">
         Google Colab</a>.
       </p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
                   gap-x-4 gap-y-4 mt-8 max-w-screen-lg mx-auto">
       {%- for t in tutorials -%}
-        <a class="w-3/4 sm:w-full block mx-auto
-                  cursor-pointer shadow bg-white group default"
-           href="{{ t.url | url }}">
-          <img class="w-full"
-               style="{%- if t.pixelate -%}image-rendering: pixelated{%- endif -%}"
-               alt="{{ t.name }}" src="{{ t.img | url }}" />
-          <p class="bg-white group-hover:bg-gray-100 p-4 border-t-2 border-gray-100">
-            {{- t.name -}}
-          </p>
-        </a>
+        <li>
+          <a class="w-3/4 sm:w-full block mx-auto
+                    cursor-pointer shadow bg-white group default"
+             href="{{ t.url | url }}">
+            <img class="w-full"
+                 style="{%- if t.pixelate -%}image-rendering: pixelated{%- endif -%}"
+                 alt="{{ t.name }}" src="{{ t.img | url }}" />
+            <p class="bg-white group-hover:bg-gray-100 p-4 border-t-2 border-gray-100">
+              {{- t.name -}}
+            </p>
+          </a>
+        </li>
       {%- endfor -%}
-      </div>
+      </ul>
     </div>
   </div>
 
