@@ -11,7 +11,7 @@ module.exports = {
   baseUrl: "https://pyribs.org", // No slash at the end.
 
   // Inserted directly into the copyright, i.e. "(c) {{ copyright }}".
-  copyright: "ICAROS Lab 2021",
+  copyright: `ICAROS Lab 2021-${new Date().getFullYear()}`,
 
   // Default description for pages. Provide "description" in the front matter of
   // a page to override this.
