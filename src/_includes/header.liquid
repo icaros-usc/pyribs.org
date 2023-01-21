@@ -22,7 +22,7 @@ Pass options as a `header` dictionary, with the following keys:
        title="Home"
        class="p-2">
       <img src="{{ config.icon.url | url }}"
-           class="h-12"
+           class="h-10"
            {% comment %} width="{{ config.icon.width }}" {% endcomment %}
            {% comment %} height="{{ config.icon.height }}" {% endcomment %}
            alt="Icon for {{ config.title }}"
@@ -81,7 +81,7 @@ Pass options as a `header` dictionary, with the following keys:
     {%- assign activeUrl = page.url | url -%}
     {% assign commonLinkStyle = "
         font-bold whitespace-nowrap
-        text-white hover:text-secondary focus:text-secondary" %}
+        text-white hover:underline focus:underline" %}
     {% comment %}
       Currently no special styles for active and inactive links.
     {% endcomment %}
@@ -148,8 +148,6 @@ Pass options as a `header` dictionary, with the following keys:
                              px-3 py-2 md:py-5
                              after:border-[0.4rem]
                              after:border-t-white
-                             hover:after:border-t-secondary
-                             focus:after:border-t-secondary
                              after:border-b-transparent after:border-x-transparent
                              after:ml-1 after:w-2 after:mt-2">
                 {{ entry.name }}
