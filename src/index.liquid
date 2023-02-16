@@ -30,9 +30,11 @@ install:
       opts:
       - name: Base
         id: i-base
-      - name: Full
-        id: i-full
         checked: true
+      - name: Visualize
+        id: i-visualize
+      # - name: Full
+      #   id: i-full
     - name: Package
       opts:
       - name: Pip
@@ -46,20 +48,31 @@ install:
     - ids: [i-base, i-pip]
       steps:
       - "pip install ribs"
+    - ids: [i-visualize, i-pip]
+      steps:
+      - "pip install ribs[visualize]"
     - ids: [i-full, i-pip]
       steps:
       - "pip install ribs[all]"
     - ids: [i-base, i-conda]
       steps:
-      - "conda install -c conda-forge pyribs-base"
+      - "conda install -c conda-forge pyribs"
+    - ids: [i-visualize, i-conda]
+      steps:
+      - "conda install -c conda-forge pyribs-visualize"
     - ids: [i-full, i-conda]
       steps:
-      - "conda install -c conda-forge pyribs"
+      - "conda install -c conda-forge pyribs-all"
     - ids: [i-base, i-source]
       steps:
       - git clone https://github.com/icaros-usc/pyribs
       - cd pyribs
       - pip install .
+    - ids: [i-visualize, i-source]
+      steps:
+      - git clone https://github.com/icaros-usc/pyribs
+      - cd pyribs
+      - pip install .[visualize]
     - ids: [i-full, i-source]
       steps:
       - git clone https://github.com/icaros-usc/pyribs
@@ -295,8 +308,8 @@ plt.show()
       <div class="lg:w-1/3 mb-4 lg:pr-6">
         <h2>Easy Installation</h2>
         <p>
-          pyribs supports Python 3.7 and above. The full version of pyribs adds
-          the visualize module.
+          pyribs supports Python 3.7 and above. The <i>visualize</i>
+          distribution additionally installs matplotlib.
         </p>
       </div>
       <div class="lg:w-2/3 flex">
