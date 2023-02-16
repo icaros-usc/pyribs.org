@@ -2,7 +2,4 @@
   "printWidth": 80,
   "proseWrap": "always",
   "trailingComma": "es5",
-  "importOrder": ["^@core/(.*)$", "^@server/(.*)$", "^@ui/(.*)$", "^[./]"],
-  "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true
 }

@@ -1,12 +1,8 @@
 # Site output
 build/
 
-# Scripts
-scripts/lunar-lander.gif
-scripts/lunar-lander.mp4
-
 # Webpack output
-src/_compiled-assets
+src/compiled-assets
 
 # JavaScript
 node_modules/

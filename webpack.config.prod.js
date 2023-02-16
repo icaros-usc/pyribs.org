@@ -1,17 +1,15 @@
 // Production config for Webpack.
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-const common = require("./webpack.config.common.js");
-const webpack = require("webpack");
 const { merge } = require("webpack-merge");
+const common = require("./webpack.config.common.js");
 
 module.exports = merge(common, {
+  // Enable minification and tree-shaking
   mode: "production",
   optimization: {
     minimizer: [
-      // Applies cssnano
-      // https://github.com/webpack-contrib/css-minimizer-webpack-plugin
-      new CssMinimizerPlugin(),
+      new OptimizeCssAssetsPlugin({}),
       new TerserPlugin({
         terserOptions: {
           output: {
@@ -22,9 +20,4 @@ module.exports = merge(common, {
       }),
     ],
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      "process.env.ELEVENTY_ENV": '"production"',
-    }),
-  ],
 });

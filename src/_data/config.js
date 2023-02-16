@@ -4,16 +4,14 @@ const github = "https://github.com/icaros-usc/pyribs/";
 const rss = "/feed.xml";
 const email = "team@pyribs.org";
 
-// Prefix, e.g. https://example.com/PREFIX - replace "template" below. Set to
-// empty string if there is no prefix.
-const prefix = ""; // No slash at the end.
-
 module.exports = {
   name: "pyribs",
   author: "ICAROS Lab pyribs Team",
-  email,
-  hostname: "https://pyribs.org", // No slash at the end.
-  pathPrefix: process.env.ELEVENTY_ENV === "development" ? "/dev" : `${prefix}`,
+  email: email,
+  baseUrl: "https://pyribs.org", // No slash at the end.
+
+  // Inserted directly into the copyright, i.e. "(c) {{ copyright }}".
+  copyright: "ICAROS Lab 2021",
 
   // Default description for pages. Provide "description" in the front matter of
   // a page to override this.
@@ -21,11 +19,7 @@ module.exports = {
     "A bare-bones Python library for quality diversity optimization.",
 
   // Path to icon image.
-  icon: {
-    url: "/imgs/icon.svg",
-    width: "49",
-    height: "44",
-  },
+  icon: "/imgs/icon.svg",
 
   // Path to Open Graph image. Change this URL whenever the image changes so
   // that sites like FB change their preview.
@@ -71,18 +65,12 @@ module.exports = {
       url: "/blog/",
     },
     {
+      name: "Publications",
+      url: "/publications/",
+    },
+    {
       name: "Citation",
-      children: [
-        {
-          name: "Citing pyribs",
-          url: "https://github.com/icaros-usc/pyribs/#citation",
-        },
-        {
-          name: "Google Scholar",
-          url:
-            "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=16246392515630874608",
-        },
-      ],
+      url: "/citation/",
     },
     {
       name: "Documentation",
@@ -92,6 +80,15 @@ module.exports = {
       name: "GitHub",
       url: github,
     },
+    // Example group.
+    // {
+    //   name: "Group",
+    //   children: [
+    //     {
+    //       name: "Home",
+    //       url: "/",
+    //     },
+    //   ],
     // },
   ],
 
@@ -100,58 +97,42 @@ module.exports = {
     {
       name: "Blog",
       url: "/blog/",
-      fa: "fas fa-comment-dots",
-      textColor: "text-blue-300",
+    },
+    {
+      name: "Publications",
+      url: "/publications/",
     },
     {
       name: "Citation",
-      url: "https://github.com/icaros-usc/pyribs/#citation",
-      fa: "fas fa-link",
-      textColor: "text-green-400",
-    },
-    {
-      name: "Google Scholar",
-      url:
-        "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=16246392515630874608",
-      fa: "ai ai-google-scholar-square",
-      textColor: "text-[#4d90fe]",
+      url: "/citation/",
     },
     {
       name: "Documentation",
       url: "https://docs.pyribs.org/",
-      fa: "fas fa-book",
-      textColor: "text-primary",
     },
     {
       name: "Tutorials",
       url: "https://docs.pyribs.org/en/stable/tutorials.html",
-      fa: "fas fa-graduation-cap",
-      textColor: "text-orange-400",
     },
     {
       name: "PyPI",
       url: "https://pypi.org/project/ribs/",
-      fa: "fab fa-python",
-      textColor: "text-[#0073b7]",
     },
     {
       name: "GitHub",
       url: github,
-      fa: "fab fa-github",
-      textColor: "text-white",
     },
     {
       name: "RSS",
       url: rss,
-      fa: "fas fa-rss",
-      textColor: "text-orange-500",
+    },
+    {
+      name: "Email",
+      url: "mailto:" + email,
     },
     {
       name: "Twitter",
-      desc: "@pyribs",
       url: twitter,
-      fa: "fab fa-twitter",
-      textColor: "text-[#2f9bf0]", // Twitter logo color.
     },
   ],
 };

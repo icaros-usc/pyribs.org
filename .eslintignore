@@ -2,8 +2,5 @@
 node_modules
 build
 
-# External files.
-src/assets/navbar.js
-
 # Include the Eleventy config.
 !.eleventy.js

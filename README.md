@@ -91,16 +91,18 @@ Refer to `package.json` for a complete list of dependencies.
 
 ```txt
 src
-├── _webpack/          // Items that are compiled by Webpack
-│   ├── css/           // SCSS/CSS - compiles into _compiled-assets/main.css
-│   └── js/            // JS - compiles into _compiled-assets/main.js and _compiled-assets/vendor.js
+├── assets/            // Items that are compiled by Webpack
+│   ├── css/           // SCSS/CSS - compiles into assets/bundle.css
+│   │   └── includes/  // Styles for _includes (includes/X.scss corresponds to _includes/X.liquid)
+│   └── js/            // JS - compiles into assets/bundle.js and assets/vendor.js
 ├── imgs/              // All site images
 ├── _data/             // Global site data - see https://www.11ty.dev/docs/data-global/
 ├── _layouts/          // Page templates, mostly using Liquid
 ├── _includes/         // Components that are included in the layouts
 ├── 404.md             // 404 page
 ├── index.md           // Home page
-└── favicon.svg        // Main favicon
+├── favicon.svg        // Source for the favicon -> plug this into realfavicongenerator.net
+└── favicon.ico        // Main favicon
 ```
 
 ## References

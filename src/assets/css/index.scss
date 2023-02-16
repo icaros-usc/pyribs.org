@@ -9,9 +9,8 @@
 //
 
 @layer base {
-  p a,
-  a.default {
-    @apply font-bold text-primary hover:text-secondary hover:underline;
+  a {
+    @apply text-primary hover:text-secondary hover:underline;
   }
   pre {
     @apply text-sm;
