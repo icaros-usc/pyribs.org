@@ -3,9 +3,9 @@ const md5File = require("md5-file");
 const cacheBust = () => {
   // A "map" of files to cache bust.
   const files = {
-    mainCss: "./src/compiled-assets/main.css",
-    mainJs: "./src/compiled-assets/main.js",
-    vendorJs: "./src/compiled-assets/vendor.js",
+    mainCss: "./src/_compiled-assets/main.css",
+    mainJs: "./src/_compiled-assets/main.js",
+    vendorJs: "./src/_compiled-assets/vendor.js",
   };
 
   // In dev, add a md5 hash to the URL, and in production, add the date.
