@@ -1,0 +1,14 @@
+{% comment %}
+Renders a round button with an icon in the center. Pass in url, title, and a
+FontAwesome icon.
+{% endcomment %}
+
+<a href="{{ _url | url }}"
+   title="{{ _title }}"
+   class="flex justify-center items-center mx-1
+          bg-primary hover:bg-secondary focus:bg-secondary
+          text-white hover:text-black focus:text-black
+          focus:outline-offset-4
+          h-12 w-12 rounded-full text-2xl">
+  <i class="{{ _icon }} mx-auto"></i>
+</a>

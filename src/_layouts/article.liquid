@@ -1,44 +1,54 @@
 ---
-layout: default.liquid
+layout: base.liquid
 ---
-<div class="__article__">
+<div class="__article__ py-4">
   {%- if cover -%}
-  <div class="bg-primary-dark text-center text-white px-10 pt-10 pb-4 mb-4
+  <div class="bg-black text-center text-white mb-4
               bg-no-repeat bg-cover bg-center bg-fixed"
        style="{%- if cover_img -%}background-image: url({{ cover_img | url }});{%- endif-%}">
-    <h1 class="text-8xl mt-28 mb-10 font-thin">{{- title -}}</h1>
-    <p class="text-2xl mb-32">{{- description -}}</p>
-    <div class="max-w-screen-md mx-auto p-4
-                flex flex-wrap md:flex-nowrap justify-between">
-      {%- if author -%}
-        <a class="mt-1 text-white" href="{{- author_url -}}">{{- author -}}</a>
-      {%- endif -%}
-      {%- if page.date -%}
-      <span class="mt-1">
-        <i class="far fa-calendar-alt"></i> {{ page.date | date: "%B %e, %Y" }}
-      </span>
-      {%- endif -%}
+    <div class="bg-black bg-opacity-30 px-10 pt-36 mb-4">
+      <h1 class="text-8xl mb-10 font-bold uppercase">{{- title -}}</h1>
+      {%- unless hide_description -%}
+        <p class="text-2xl mb-32">{{- description -}}</p>
+      {%- endunless -%}
+      <div class="max-w-screen-lg mx-auto p-4
+                  flex flex-wrap md:flex-nowrap justify-between">
+        {%- if author -%}
+          <a class="mt-1 text-primary" href="{{- author_url -}}">{{- author -}}</a>
+        {%- endif -%}
+        {%- unless hide_date -%}
+          {%- if page.date -%}
+          <span class="mt-1">
+            <i class="far fa-calendar-alt"></i> {{ page.date | date: "%B %e, %Y" }}
+          </span>
+          {%- endif -%}
+        {%- endunless -%}
+      </div>
     </div>
   </div>
   {%- else -%}
-  <div class="max-w-screen-md mx-auto p-4">
-    <h1 class="text-5xl text-black font-extralight pt-4 pb-3">{{- title -}}</h1>
+  <div class="max-w-screen-lg mx-auto px-4">
+    <h1 class="text-5xl text-black font-bold pt-8 pb-3">{{- title -}}</h1>
     <div class="text-gray-500">
-      {%- if description -%}
-      <p class="mt-1 mb-2">{{- description -}}</p>
-      {%- endif -%}
+      {%- unless hide_description -%}
+        {%- if description -%}
+        <p class="mt-1 mb-2">{{- description -}}</p>
+        {%- endif -%}
+      {%- endunless -%}
 
       <div class="flex flex-wrap md:flex-nowrap justify-between">
-        <a class="mt-1" href="{{- author_url -}}">{{- author -}}</a>
+        <a class="mt-1 default" href="{{- author_url -}}">{{- author -}}</a>
+        {%- unless hide_date -%}
         <span class="mt-1">
           <i class="far fa-calendar-alt"></i> {{ page.date | date: "%B %e, %Y" }}
         </span>
+        {%- endunless -%}
       </div>
     </div>
   </div>
   {%- endif -%}
 
-  <article class="prose max-w-screen-md mx-auto p-4 mb-8">
+  <article class="prose max-w-screen-lg mx-auto px-4 mb-8 mt-4">
     {{ content }}
   </article>
 </div>
