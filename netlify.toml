@@ -9,3 +9,6 @@ npm test
 [[redirects]]
 from = "/installation"
 to = "/#installation"
+
+[context.master.environment]
+NPM_VERSION = "9"  # Works with Node 14 for this repo.
