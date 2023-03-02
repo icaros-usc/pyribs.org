@@ -67,12 +67,12 @@ module.exports = {
   // Navigation links.
   navigation: [
     {
-      name: "Blog",
-      url: "/blog/",
-    },
-    {
-      name: "Citation",
+      name: "Paper",
       children: [
+        {
+          name: "Pyribs Paper",
+          url: "/paper/",
+        },
         {
           name: "Citing pyribs",
           url: "https://github.com/icaros-usc/pyribs/#citation",
@@ -84,25 +84,26 @@ module.exports = {
         },
       ],
     },
+    // {
+    //   name: "Blog",
+    //   url: "/blog/",
+    // },
     {
       name: "Documentation",
       url: "https://docs.pyribs.org/",
     },
     {
+      name: "Tutorials",
+      url: "https://docs.pyribs.org/en/stable/tutorials.html",
+    },
+    {
       name: "GitHub",
       url: github,
     },
-    // },
   ],
 
   // Footer links.
   footer: [
-    {
-      name: "Blog",
-      url: "/blog/",
-      fa: "fas fa-comment-dots",
-      textColor: "text-blue-300",
-    },
     {
       name: "Citation",
       url: "https://github.com/icaros-usc/pyribs/#citation",
@@ -128,6 +129,12 @@ module.exports = {
       fa: "fas fa-graduation-cap",
       textColor: "text-orange-400",
     },
+    // {
+    //   name: "Blog",
+    //   url: "/blog/",
+    //   fa: "fas fa-comment-dots",
+    //   textColor: "text-blue-300",
+    // },
     {
       name: "PyPI",
       url: "https://pypi.org/project/ribs/",

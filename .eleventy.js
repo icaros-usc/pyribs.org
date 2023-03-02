@@ -26,7 +26,7 @@ module.exports = function (eleventyConfig) {
 
   // Copy static files.
   for (const file of [
-    "**/*.{jpg,jpeg,png,svg,mp4,mp3,pdf}",
+    "**/*.{jpg,jpeg,png,svg,mp4,mp3,pdf,zip}",
     // Copy additional static (non-compiled) assets.
     "assets/",
   ]) {
