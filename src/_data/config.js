@@ -1,7 +1,7 @@
 // Config for the entire site.
 const twitter = "https://twitter.com/pyribs/";
 const github = "https://github.com/icaros-usc/pyribs/";
-const rss = "/feed.xml";
+// const rss = "/feed.xml";
 const email = "team@pyribs.org";
 
 // Prefix, e.g. https://example.com/PREFIX - replace "template" below. Set to
@@ -37,7 +37,7 @@ module.exports = {
   // URL to visit to raise issues about the website.
   issues: "https://github.com/icaros-usc/pyribs.org/issues/new/choose",
 
-  // Blog.
+  // Blog. Available to avoid broken links but not linked in main website.
   blog: {
     title: "pyribs Blog",
 
@@ -57,11 +57,11 @@ module.exports = {
       url: twitter,
       fa: "fab fa-twitter",
     },
-    {
-      name: "RSS Feed",
-      url: rss,
-      fa: "fa fa-rss",
-    },
+    // {
+    //   name: "RSS Feed",
+    //   url: rss,
+    //   fa: "fa fa-rss",
+    // },
   ],
 
   // Navigation links.
@@ -147,12 +147,12 @@ module.exports = {
       fa: "fab fa-github",
       textColor: "text-white",
     },
-    {
-      name: "RSS",
-      url: rss,
-      fa: "fas fa-rss",
-      textColor: "text-orange-500",
-    },
+    // {
+    //   name: "RSS",
+    //   url: rss,
+    //   fa: "fas fa-rss",
+    //   textColor: "text-orange-500",
+    // },
     {
       name: "Twitter",
       desc: "@pyribs",
