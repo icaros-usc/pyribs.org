@@ -79,8 +79,7 @@ module.exports = {
         },
         {
           name: "Google Scholar",
-          url:
-            "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=16246392515630874608",
+          url: "https://scholar.google.com/scholar?cites=1780392371068190395",
         },
       ],
     },
