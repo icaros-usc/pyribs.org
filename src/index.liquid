@@ -33,8 +33,8 @@ install:
         checked: true
       - name: Visualize
         id: i-visualize
-      # - name: Full
-      #   id: i-full
+      # - name: All
+      #   id: i-all
     - name: Package
       opts:
       - name: Pip
@@ -51,7 +51,7 @@ install:
     - ids: [i-visualize, i-pip]
       steps:
       - "pip install ribs[visualize]"
-    - ids: [i-full, i-pip]
+    - ids: [i-all, i-pip]
       steps:
       - "pip install ribs[all]"
     - ids: [i-base, i-conda]
@@ -60,7 +60,7 @@ install:
     - ids: [i-visualize, i-conda]
       steps:
       - "conda install -c conda-forge pyribs-visualize"
-    - ids: [i-full, i-conda]
+    - ids: [i-all, i-conda]
       steps:
       - "conda install -c conda-forge pyribs-all"
     - ids: [i-base, i-source]
@@ -73,7 +73,7 @@ install:
       - git clone https://github.com/icaros-usc/pyribs
       - cd pyribs
       - pip install .[visualize]
-    - ids: [i-full, i-source]
+    - ids: [i-all, i-source]
       steps:
       - git clone https://github.com/icaros-usc/pyribs
       - cd pyribs
