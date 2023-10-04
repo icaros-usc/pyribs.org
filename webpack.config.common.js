@@ -2,7 +2,6 @@
 // configurations in this directory. See
 // https://dev.to/stowball/creating-a-production-ready-eleventy-project-with-webpack-babel-and-sass-35ep
 // for more info.
-const Fiber = require("fibers");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
@@ -67,7 +66,6 @@ module.exports = {
             options: {
               implementation: require("sass"),
               sassOptions: {
-                fiber: Fiber,
                 outputStyle: "expanded",
               },
             },
