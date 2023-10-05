@@ -152,6 +152,18 @@ module.exports = {
     //   textColor: "text-orange-500",
     // },
     {
+      name: "Discord",
+      url: "https://discord.gg/QxhcJSqZ8G",
+      fa: "fab fa-discord",
+      textColor: "text-[#5865F2]",
+    },
+    {
+      name: "Mailing List",
+      url: "https://groups.google.com/g/pyribs/",
+      fa: "fas fa-envelope",
+      textColor: "text-blue-300",
+    },
+    {
       name: "Twitter",
       desc: "@pyribs",
       url: twitter,
