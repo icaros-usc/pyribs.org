@@ -1,3 +1,9 @@
 {
-  "skip": ["pyribs.org", "linkedin.com", "twitter.com", "dl.acm.org"]
+  "skip": [
+    "twitter.com",
+    "pyribs.org",
+    "linkedin.com",
+    "twitter.com",
+    "dl.acm.org"
+  ]
 }
