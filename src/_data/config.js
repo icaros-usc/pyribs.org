@@ -57,6 +57,11 @@ module.exports = {
       url: twitter,
       fa: "fab fa-twitter",
     },
+    {
+      name: "Mailing List",
+      url: "https://groups.google.com/g/pyribs/",
+      fa: "fas fa-envelope",
+    },
     // {
     //   name: "RSS Feed",
     //   url: rss,
