@@ -12,7 +12,7 @@
     "build:eleventy": "ELEVENTY_ENV=production eleventy",
     "build": "npm-run-all clean build:webpack build:eleventy",
     "lint": "eslint '**/*.{js,jsx}' --quiet",
-    "linkinator": "linkinator ./build --recurse --retry",
+    "linkinator": "linkinator ./build --recurse --retry --config linkinator.config.json",
     "test": "npm run linkinator"
   },
   "repository": {
