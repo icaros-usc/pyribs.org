@@ -4,12 +4,12 @@ const fs = require("fs");
 const cacheBust = () => {
   // A "map" of files to cache bust.
   const files = {
-    mainCss: "./src/compiled-assets/main.css",
-    mainJs: "./src/compiled-assets/main.js",
+    mainCss: "./src/_compiled-assets/main.css",
+    mainJs: "./src/_compiled-assets/main.js",
   };
 
   // vendor.js is not always created.
-  const vendorJsPath = "./src/compiled-assets/vendor.js";
+  const vendorJsPath = "./src/_compiled-assets/vendor.js";
   if (fs.existsSync(vendorJsPath)) {
     cacheBust.vendorJs = vendorJsPath;
   }
