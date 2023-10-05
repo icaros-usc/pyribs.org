@@ -75,7 +75,7 @@ module.exports = {
         },
         {
           name: "Citing pyribs",
-          url: "https://github.com/icaros-usc/pyribs/#citation",
+          url: "https://github.com/icaros-usc/pyribs/#paper-and-citation",
         },
         {
           name: "Google Scholar",
@@ -105,14 +105,13 @@ module.exports = {
   footer: [
     {
       name: "Citation",
-      url: "https://github.com/icaros-usc/pyribs/#citation",
+      url: "https://github.com/icaros-usc/pyribs/#paper-and-citation",
       fa: "fas fa-link",
       textColor: "text-green-400",
     },
     {
       name: "Google Scholar",
-      url:
-        "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=16246392515630874608",
+      url: "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=16246392515630874608",
       fa: "ai ai-google-scholar-square",
       textColor: "text-[#4d90fe]",
     },
