@@ -13,6 +13,14 @@ tutorials:
   - name: Generating Tom Cruise Images with Differentiable Quality Diversity
     url: https://docs.pyribs.org/en/stable/tutorials/tom_cruise_dqd.html
     img: /imgs/tom-cruise-dqd.png
+  - name: |
+      Incorporating Human Feedback into Quality Diversity for Diversified
+      Text-to-Image Generation
+    url: https://docs.pyribs.org/en/stable/tutorials/qdhf.html
+    img: /imgs/qdhf.jpg
+  - name: Scaling CMA-MAE on the Sphere Benchmark
+    url: https://docs.pyribs.org/en/stable/tutorials/scalable_cma_mae.html
+    img: /imgs/cma-mae-sphere.png
   - name: Illuminating the Latent Space of an MNIST GAN
     url: https://docs.pyribs.org/en/stable/tutorials/lsi_mnist.html
     img: /imgs/lsi-mnist.png
@@ -395,8 +403,8 @@ plt.show()
         <a href="https://colab.research.google.com/github/icaros-usc/pyribs/blob/master/">
         Google Colab</a>.
       </p>
-      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
-                  gap-x-4 gap-y-4 mt-8 max-w-screen-lg mx-auto">
+      <ul class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4
+                  gap-x-4 gap-y-4 mt-8 max-w-full mx-auto">
       {%- for t in tutorials -%}
         <li>
           <a class="w-3/4 sm:w-full block mx-auto
