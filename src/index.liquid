@@ -41,8 +41,8 @@ install:
         checked: true
       - name: Visualize
         id: i-visualize
-      # - name: All
-      #   id: i-all
+      - name: All
+        id: i-all
     - name: Package
       opts:
       - name: Pip
@@ -58,9 +58,11 @@ install:
       - "pip install ribs"
     - ids: [i-visualize, i-pip]
       steps:
+      - "# If you are on Mac, you may need to use quotations, e.g., pip install \"ribs[visualize]\""
       - "pip install ribs[visualize]"
     - ids: [i-all, i-pip]
       steps:
+      - "# If you are on Mac, you may need to use quotations, e.g., pip install \"ribs[all]\""
       - "pip install ribs[all]"
     - ids: [i-base, i-conda]
       steps:
@@ -323,7 +325,8 @@ plt.show()
         <p>
           pyribs supports Python 3.8 and above. The <i>visualize</i>
           distribution additionally installs visualization dependencies such as
-          Matplotlib.
+          Matplotlib, while <i>all</i> installs all extra dependencies.
+          <i>ribs[visualize]</i> should be sufficient for most users.
         </p>
       </div>
       <div class="lg:w-2/3 flex">
