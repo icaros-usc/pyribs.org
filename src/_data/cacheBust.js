@@ -11,7 +11,7 @@ const cacheBust = () => {
   // vendor.js is not always created.
   const vendorJsPath = "./src/_compiled-assets/vendor.js";
   if (fs.existsSync(vendorJsPath)) {
-    cacheBust.vendorJs = vendorJsPath;
+    files.vendorJs = vendorJsPath;
   }
 
   // In dev, add a md5 hash to the URL, and in production, add the date.
