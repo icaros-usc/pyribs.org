@@ -73,8 +73,9 @@ install:
       - "# If you are on Mac, you may need to use quotations, e.g., pip install \"ribs[all]\""
       - "pip install ribs[all]"
       - ""
-      - "# In addition to the above, some parts of pyribs use PyTorch. Since PyTorch is a large "
-      - "# package, we do not include it in ribs[all]. If needed, one way to install it is:"
+      - "# In addition to the above, some parts of pyribs use PyTorch. Since PyTorch is a large"
+      - "# package, we do not include it in ribs[all]. We recommend referring to the PyTorch"
+      - "# documentation for info on how to install PyTorch. One way to install it is:"
       - "pip install torch"
     - ids: [i-base, i-conda]
       steps:
@@ -86,8 +87,9 @@ install:
       steps:
       - "conda install -c conda-forge pyribs-all"
       - ""
-      - "# In addition to the above, some parts of pyribs use PyTorch. Since PyTorch is a large "
-      - "# package, we do not include it in ribs[all]. If needed, one way to install it is:"
+      - "# In addition to the above, some parts of pyribs use PyTorch. Since PyTorch is a large"
+      - "# package, we do not include it in ribs[all]. We recommend referring to the PyTorch"
+      - "# documentation for info on how to install PyTorch. One way to install it is:"
       - "conda install -c conda-forge pytorch"
     - ids: [i-base, i-source]
       steps:
@@ -105,8 +107,9 @@ install:
       - cd pyribs
       - pip install .[all]
       - ""
-      - "# In addition to the above, some parts of pyribs use PyTorch. Since PyTorch is a large "
-      - "# package, we do not include it in ribs[all]. If needed, one way to install it is:"
+      - "# In addition to the above, some parts of pyribs use PyTorch. Since PyTorch is a large"
+      - "# package, we do not include it in ribs[all]. We recommend referring to the PyTorch"
+      - "# documentation for info on how to install PyTorch. One way to install it is:"
       - "pip install torch"
 ---
 
