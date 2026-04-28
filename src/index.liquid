@@ -58,6 +58,8 @@ install:
         checked: true
       - name: Conda
         id: i-conda
+      - name: uv
+        id: i-uv
       - name: Source
         id: i-source
   commands:
@@ -85,6 +87,21 @@ install:
     - ids: [i-all, i-conda]
       steps:
       - "conda install -c conda-forge pyribs-all"
+      - ""
+      - "# Note that this command installs a default version of PyTorch. You can also install"
+      - "# PyTorch on your own, e.g., if you need a version with CUDA. Refer to the PyTorch"
+      - "# documentation for more info on how to install PyTorch."
+    - ids: [i-base, i-uv]
+      steps:
+      - "uv add ribs"
+    - ids: [i-visualize, i-uv]
+      steps:
+      - "# If you are on Mac, you may need to use quotations, e.g., uv add \"ribs[visualize]\""
+      - "uv add ribs[visualize]"
+    - ids: [i-all, i-uv]
+      steps:
+      - "# If you are on Mac, you may need to use quotations, e.g., uv add \"ribs[all]\""
+      - "uv add ribs[all]"
       - ""
       - "# Note that this command installs a default version of PyTorch. You can also install"
       - "# PyTorch on your own, e.g., if you need a version with CUDA. Refer to the PyTorch"
